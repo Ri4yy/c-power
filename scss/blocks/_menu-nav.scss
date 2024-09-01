@@ -1,0 +1,24 @@
+.menu-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &__item {
+        display: flex;
+    }
+
+    &__link {
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        color: $main-text;
+
+        &--active {
+            color: $main-color;
+        }
+    }
+}
+
+nav {
+    display: inline-flex;
+}

@@ -1,0 +1,23 @@
+.consultation-form {
+    position: relative;
+    border-radius: 40px;
+    padding: 60px 40px;
+    background: $green-light;
+
+    &__top {
+        max-width: 910px;
+    }
+    &__subtitle {
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+    }
+    &__img {
+        position: absolute;
+        right: 40px;
+        bottom: 0;
+        width: calc((440px / 1680px) * 100%);
+    }
+}

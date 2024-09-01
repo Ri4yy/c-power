@@ -1,0 +1,26 @@
+.about {
+    display: flex;
+    flex-direction: column;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__description {
+        border-radius: 30px;
+        padding: 30px;
+        background: $brown;
+        height: fit-content;
+        width: 34%;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: #fff;
+    }
+    &__bottom {
+        margin-top: 80px;
+    }
+}

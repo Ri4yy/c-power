@@ -1,0 +1,83 @@
+.hero {
+    max-width: 990px;
+
+    &__headline {
+        margin-top: 134px;
+    }
+    &__subtitle {
+        font-weight: 500;
+        font-size: 24px;
+        color: $main-text;
+    }
+    &__title {
+
+    }
+    &__address {
+        margin-top: 30px; 
+
+        background: $green-light;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+
+        padding: 18px 30px 22px;
+        max-width: 540px;
+
+        & p {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            font-weight: 500;
+            font-size: 18px;
+            color: $main-text;
+
+            &::before {
+                content: url('../assets/img/icons/point.svg');
+            }
+        }
+    }
+
+    &__bottom {
+        margin-top: 33px;
+    }
+    &__description {
+        max-width: 650px;
+
+        font-weight: 500;
+        font-size: 18px;
+        color: $main-text;
+    }
+
+    &__buttons {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+    }
+
+}
+
+.bg-hero {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: -webkit-fill-available;
+
+    &__wrapper {
+        position: relative;
+    }
+    &__btn {
+        position: absolute;
+        left: 50%;
+        bottom: 380px;
+
+        background: rgba(255, 255, 255, 0.7);
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    &__img {
+        z-index: 1;
+        height: 100%;
+    }
+}

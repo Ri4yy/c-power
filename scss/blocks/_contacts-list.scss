@@ -1,0 +1,21 @@
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        color: $main-text;
+    }
+    &__text {
+        font-weight: 600;
+        font-size: 16px;
+        color: $main-text;
+    }
+}

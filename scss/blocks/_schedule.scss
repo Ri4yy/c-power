@@ -1,0 +1,33 @@
+.schedule {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    &__img {
+        width: calc((900px / 1760px) * 100%);
+        object-fit: contain;
+    }
+
+    &__right {
+        width: calc((760px / 1760px) * 100%);
+    }
+    &__wrapper {
+        border-radius: 40px 0 0 40px;
+        background: $green-light;
+        padding: 50px 80px;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+
+        &:nth-of-type(2) {
+            margin-top: 20px;
+        }
+    }
+    &__source {
+        display: block;
+        padding: 26px 80px 0 70px;
+    }
+}

@@ -1,0 +1,84 @@
+.form-order {
+    margin-top: 40px;
+
+    display: flex;
+    gap: 20px;
+
+    &__btn {
+        border-radius: 36px;
+        padding: 16px 28px;
+        background: #fff;
+
+        font-weight: 500;
+        font-size: 18px;
+        color: $main-text;
+    }
+}
+
+.form-consultation {
+    margin-top: 40px;
+
+    display: flex;
+    gap: 20px;
+
+    width: calc((1086px / 1680px) * 100%);
+
+    &__btn {
+        border-radius: 36px;
+        padding: 16px 28px;
+        background: $main-color;
+
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        white-space: nowrap;
+    }
+}
+
+.form-feedback {
+    margin-top: 40px;
+
+    display: flex;
+    gap: 20px;
+
+    width: calc((1038px / 1640px) * 100%);
+
+    &__btn {
+        border-radius: 36px;
+        padding: 16px 28px;
+        background: $main-color;
+
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        white-space: nowrap;
+    }
+}
+
+.input {
+    $white: #fff;
+
+    padding: 16px 24px;
+    border-radius: 36px;
+    width: 100%;
+
+    font-weight: 500;
+    font-size: 18px;
+
+    &--white {
+        color: $white;
+        border: 1px solid $white;
+
+        &::placeholder {
+            color: $white;
+        }
+    }
+    &--green {
+        color: $main-text;
+        border: 1px solid $main-text;
+
+        &::placeholder {
+            color: $main-text;
+        }
+    }
+}

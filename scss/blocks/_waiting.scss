@@ -1,0 +1,93 @@
+.waiting {
+    display: grid;
+    gap: 32px;
+
+    &__item {
+        border: 1px solid $green-light;
+        border-radius: 40px;
+        padding: 40px 32px;
+        box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.12);
+        background: #fff;
+        min-height: 244px;
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+        gap: 32px;
+        padding-right: calc((100% - 1760px) / 2);
+
+        grid-template-areas:
+        "a a b c"
+        ". d e f";
+
+        & .waiting__item--first {
+            position: relative;
+            border-radius: unset;
+            border: unset;
+            padding: 54px 0 42px 0;
+            box-shadow: none;
+            background: none;
+            // padding-left: calc((100% - 1760px) / 2);
+            // grid-column: span 2;
+
+            & .waiting__text {
+                margin-top: 30px;
+
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 150%;
+                color: #fff;
+            }
+
+            &::before {
+                position: absolute;
+                top: -30px;
+                left: 0;
+                content: "";
+                width: calc(100% + 150px);
+                height: calc(100% + 110px);
+                border-radius: 0 1000px 1000px 0;
+                background: $main-color;
+                z-index: -1;
+            }
+        }
+    }
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        color: $brown;
+
+        & span {
+            font-size: 48px;
+        }
+    }
+    &__text {
+        margin-top: 16px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+    }
+}
+
+.item1 {
+    grid-area: a;
+}
+.item2 {
+    grid-area: b;
+}
+.item3 {
+    grid-area: c;
+}
+.item4 {
+    grid-area: d;
+}
+.item5 {
+    grid-area: e;
+}
+.item6 {
+    grid-area: f;
+}

@@ -1,0 +1,28 @@
+.town {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    &__wrapper {
+        
+    }
+    &__text {
+        margin-top: 12px;
+        font-weight: 500;
+        font-size: 20px;
+        color: $main-text;
+    }
+    &__img {
+
+        &:first-child {
+            border-radius: 0 100px 100px 0;
+            width: 18%;
+            object-fit: cover;
+        }
+        &:last-child {
+            border-radius: 100px 0 0 100px;
+            width: 42%;
+            object-fit: cover;
+        }
+    }
+}

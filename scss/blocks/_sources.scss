@@ -1,0 +1,25 @@
+.sources {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 32px; 
+        height: 140px;
+
+        border: 1px solid $green-light;
+        border-radius: 30px;
+        padding: 25px 36px;
+        box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.12);
+        background: #fff;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+    }
+}

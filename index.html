@@ -1,14 +1,679 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <title>Главная</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="assets/libs/swiper-bundle.min.css">
 </head>
 <body>
     <header class="header">
-        <h1>header</h1>
+        <div class="container">
+            <div class="header__wrapper">
+                <a href="/" class="logo">
+                    <img src="assets/img/icons/logo.png" alt="">
+                </a>
+                <nav>
+                    <ul class="menu-nav">
+                        <li class="menu-nav__item">
+                            <a href="" class="menu-nav__link menu-nav__link--active">О проекте</a>
+                        </li>
+                        <li class="menu-nav__item">
+                            <a href="" class="menu-nav__link">Ген-план</a>
+                        </li>
+                        <li class="menu-nav__item">
+                            <a href="" class="menu-nav__link">Инвесторам</a>
+                        </li>
+                        <li class="menu-nav__item">
+                            <a href="" class="menu-nav__link">Галерея</a>
+                        </li>
+                        <li class="menu-nav__item">
+                            <a href="" class="menu-nav__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="tel:89265304484" class="header__phone">8 (926) 530-44-84</a>
+            </div>
+        </div>
+        <div class="hero">
+            <div class="hero__headline left-padding">
+                <span class="hero__subtitle">Туристический комплекс</span>
+                <h1 class="hero__title">Центр Cилы</h1>
+            </div>
+            <div class="hero__address left-padding">
+                <p>Владимирская обл, Александровский район, Деревня Жуклино</p>
+            </div>
+            <div class="hero__bottom left-padding">
+                <p class="hero__description">
+                    Реконструкция «Центр Силы» - это возможность стать жителем старинного  русского города, и участвовать в программах его развития, 
+                    принимать участие в подготовке и проведении  православных праздников, вовлечение в быт и ремесленнические работы.
+                </p>
+                <div class="hero__buttons">
+                    <button class="btn btn--green btn-hover btn-hover--green btn-feedback">Обсудить проект</button>
+                    <button class="btn btn--border btn-hover btn-hover--transparent btn-pres">Презентация</button>
+                    <button class="btn btn--border btn-hover btn-hover--transparent btn-play">
+                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5484 7.16231C14.1505 7.50996 14.1505 8.37909 13.5484 8.72674L1.35484 15.7667C0.752688 16.1143 -6.85385e-07 15.6798 -6.54992e-07 14.9845L-3.95401e-08 0.904572C-9.14745e-09 0.209269 0.752688 -0.225295 1.35484 0.122356L13.5484 7.16231Z" fill="#3A3737" />
+                        </svg>
+                        <span>Смотреть видео</span>
+                    </button>
+                </div>
+                <ul class="hero-advantages">
+                    <li class="hero-advantages__item">
+                        <img src="assets/img/icons/square.svg" class="hero-advantages__img" alt="">
+                        <span class="hero-advantages__text">260 000 м²</span>
+                    </li>
+                    <li class="hero-advantages__item">
+                        <img src="assets/img/icons/object.svg" class="hero-advantages__img" alt="">
+                        <span class="hero-advantages__text">140 объектов</span>
+                    </li>
+                    <li class="hero-advantages__item">
+                        <img src="assets/img/icons/festival.svg" class="hero-advantages__img" alt="">
+                        <span class="hero-advantages__text">Круглогодичный фестиваль</span>
+                    </li>
+                    <li class="hero-advantages__item">
+                        <img src="assets/img/icons/parks.svg" class="hero-advantages__img" alt="">
+                        <span class="hero-advantages__text">3 Тематических парка</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-hero">
+            <div class="bg-hero__wrapper">
+                <img src="assets/img/bg/hero.png" class="bg-hero__img" alt="">
+                <button class="btn btn--border btn-hover btn-hover--transparent bg-hero__btn">
+                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5484 7.16231C14.1505 7.50996 14.1505 8.37909 13.5484 8.72674L1.35484 15.7667C0.752688 16.1143 -6.85385e-07 15.6798 -6.54992e-07 14.9845L-3.95401e-08 0.904572C-9.14745e-09 0.209269 0.752688 -0.225295 1.35484 0.122356L13.5484 7.16231Z" fill="#3A3737" />
+                    </svg>
+                    <span>Смотреть видео</span>
+                </button>
+            </div>
+        </div>
     </header>
+
+    <!-- О проекте -->
+    <section class="section section--large">
+        <div class="container">
+            <div class="section__header">
+                <h2>О проекте</h2>
+                <p class="section__subtitle">Историческая ролевая реконструкция «Центр Силы» - первый уникальный туристический всесезонный комплекс, с воссозданной городской архитектурой по картинам русских художников и макетов городов эпохи Великой Руси.</p>
+            </div>
+            <div class="container__inner">
+                <div class="project">
+                    <div class="project__left">
+                        <h3>Масштабы проекта</h3>
+                        <p class="project__subtitle">Мы, команда создателей туристического комплекса, обладаем земельным участком площадью 46 гектаров, который удобно расположен рядом с автомобильной федеральной дорогой А-108 (вторая бетонка) в деревне Жуклино, Александровского района Владимирской области</p>
+                        <div class="project__description">
+                            <p class="project__text">Мы разработали генеральный план комплекса, включающий 140 домовладений, каждое из которых подключено к электрическим сетям МОЭСК с общей мощностью 1900 кВа</p>
+                        </div>
+                    </div>
+                    <div class="project__right">
+                        <img src="assets/img/photo/object.png" class="project__img" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цели -->
+    <section class="section section--large">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="title title--xs">Важность и цели проекта Центр Силы</h2>
+                <p class="section__subtitle section__subtitle--xs">Проект «Центр Силы/Ноев Ковчег» — «социальный проект — ролевой реконструкции»</p>
+            </div>
+            <div class="container__inner">
+                <div class="goals">
+                    <div class="goals__item">
+                        <span class="goals__number">1</span>
+                        <p class="goals__text">На территории будет располагаться развлекательно-торговый туристический всесезонный комплекс представленный в стиле древнерусского города эпохи «Великой руси».</p>
+                    </div>
+                    <div class="goals__item">
+                        <span class="goals__number">2</span>
+                        <p class="goals__text">“Центр Силы” вмещает зодчество, этнические ценности, обряды и раскрывает историю древнерусского поселения, которое основалось после принятия христианства на Руси.</p>
+                    </div>
+                    <div class="goals__item">
+                        <span class="goals__number">3</span>
+                        <p class="goals__text">Проект в современном адаптированном формате, нацелен на ведение коммерческой туристической деятельности и способствует увеличению туристического потока.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Древнерусский город -->
+    <section class="section section--large">
+        <div class="town">
+            <img src="assets/img/photo/oldrus-left.png" class="town__img" alt="">
+            <div class="town__wrapper">
+                <h2>Древнерусский город</h2>
+                <p class="town__text">Это ценная каркасная система проекта. Формирование города по образцу древнерусского было сложной задачей из-за нехватки источников, описывающих устройство того времени. Город воссоздан с нуля на основе картин, макетов и архитектурных референсов.</p>
+                <p class="town__text"> Учтены экономический характер городов Великой Руси и логистические ограничения того времени, чтобы соединить древнюю структуру с современными требованиями.</p>
+                <p class="town__text">Формирование улиц, создание общественных пространств и устранение слепых коммерческих зон обеспечивают гармоничное взаимодействие объектов с человеком.</p>
+            </div>
+            <img src="assets/img/photo/oldrus-right.png" class="town__img" alt="">
+        </div>
+    </section>
+
+    <!-- Форма -->
+    <section class="section section--large">
+        <div class="container">
+            <div class="order-form">
+                <div class="order-form__wrapper">
+                    <h2 class="white-text">Закажите подробную 3D-экскурсию онлайн</h2>
+                    <p class="order-form__subtitle white-text">Мы проведем подробный тур по объектам застройки и покажем все варианты построек</p>
+                    <form action="" class="form form-order">
+                        <input type="text" class="input input--white" name="name" placeholder="Ваше имя">
+                        <input type="text" class="input input--white" name="name" placeholder="Ваше имя">
+                        <button class="form-order__btn">Заказать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Примеры -->
+    <section class="section section--large">
+        <div class="example">
+            
+            <div class="solutions">
+                <div class="solutions__left solutions__left--medium solutions__left--bg left-padding">
+                    <h2>Зона купели с Медведем</h2>
+                    <div class="solutions__wrapper">
+                        <div class="solutions__item">
+                            <p class="solutions__text">Основанная композиционная структура, церемониальная площадь с купелью и скульптурой Медведя для проведения культурно-массовых мероприятий таких как «Крещение Руси» олицетворяет русский дух нашего героического общества, богатого своей историй и невероятных свершений.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/photo/font-area.png" class="solutions__img solutions__img--large" alt="">
+            </div>
+
+            <div class="solutions">
+                <div class="solutions__left solutions__left--large left-padding">
+                    <h2>Храм Сергея Радонежского</h2>
+                    <div class="solutions__wrapper solutions__wrapper--large">
+                        <div class="solutions__item">
+                            <p class="solutions__text">Деревянный православный храм, памятник архитектуры на территории Центра Силы. Относится к типу деревянных восьмериковых ярусных церквей. Основой композиции является восьмигранный сруб - «восьмерик» - с четырьмя двухступенчатыми прирубами по сторонам света. Восточный алтарный прируб имеет форму пятиугольника. Западный сруб - невысокая трапезная.</p>
+                        </div>
+                        <div class="solutions__item">
+                            <p class="solutions__text">На нижний восьмерик поставлены ещё два меньших восьмигранных сруба. Церковь увенчана 22 главами, расположенными ярусами, с криволинейными кровлями - «бочками». Трапезная перекрыта трёхскатной крышей, вход оформлен двухвсходным крытым крыльцом на консолях. Верхние восьмерики опираются на перекрещивающиеся балки нижних, раскреплены бревенчатыми подкосами.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/photo/temple.png" class="solutions__img solutions__img--medium" alt="">
+            </div>
+
+            <div class="solutions">
+                <div class="solutions__left solutions__left--large solutions__left--bg left-padding">
+                    <h2>Ноев ковчег</h2>
+                    <div class="solutions__wrapper">
+                        <div class="solutions__item">
+                            <p class="solutions__text">Ноев Ковчег — библейская история, которая была принята в Святой Руси в 988 году после брака Владимира Красное Солнышко с византийской принцессой Анной. Данная история объясняет, почему комплекс «Ноев Ковчег» расположен на территории Центра Силы в деревне Жуклино, Московская область.</p>
+                            <p class="solutions__text">Предполагается, что после наводнения «Ноев Ковчег» осел в районе «Центра Силы» у Сергиева Посада, где возникло древнерусское поселение с языческими традициями, сохранившимися после принятия христианства. История Центра Силы отражает эту культуру и обряды.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/photo/noah.png" class="solutions__img solutions__img--large" alt="">
+            </div>
+
+            <div class="solutions">
+                <div class="solutions__left solutions__left--medium left-padding">
+                    <h2>Сказочный лес</h2>
+                    <div class="solutions__wrapper">
+                        <div class="solutions__item">
+                            <p class="solutions__text">Сказочный лес: является третьей стадией развития проекта «Центр силы/Ноев Ковчего и раскрывает формат абсолютно нового формата бизнеса в России, воспроизведений по всем Европейским и западным форматам и сочетает в себе Electric forest, Burning Man и русскую айдентику, адаптированную под российские реалии в том числе, в целом - это пространство можно охарактеризовать как Арт-коммерческая недвижимость в мультимедийном пространстве леса.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="assets/img/photo/fairytale-forest.png" class="solutions__img solutions__img--medium" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Строение улиц -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="title title--xs">Cтроение улиц</h2>
+            </div>
+            <div class="container__inner">
+                <div class="swiper swiper-build">
+                    <div class="swiper-wrapper swiper-build__wrapper">
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-1.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-2.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-3.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-4.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-5.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-6.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-5.png" class="swiper-build__img" alt="">
+                        </div>
+                        <div class="swiper-slide swiper-build__slide">
+                            <img src="assets/img/slider/slide-6.png" class="swiper-build__img" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дорожная карта -->
+    <section class="section">
+
+    </section>
+    
+    <!-- Ожидания от проектов -->
+    <section class="section section--large">
+        <div class="waiting">
+            <div class="waiting__row">
+                <div class="waiting__item item1 waiting__item--first left-padding">
+                    <h2 class="white-text">Ожидания от проекта</h2>
+                    <p class="waiting__text">Активная вовлеченность УК в долгосрочное развитие комплекса</p>
+                </div>
+                <div class="waiting__item item2">
+                    <p class="waiting__title">от <span>70%</span></p>
+                    <p class="waiting__text">Стабильный круглогодичный арендный поток с прогнозируемым уровнем загрузки</p>
+                </div>
+                <div class="waiting__item item3">
+                    <p class="waiting__title">до <span>1,5</span> лет</p>
+                    <p class="waiting__text">Быстрый ввод в эксплуатацию</p>
+                </div>
+                <div class="waiting__item item4">
+                    <p class="waiting__title"><span>2</span> года</p>
+                    <p class="waiting__text">Окупаемость проекта</p>
+                </div>
+                <div class="waiting__item item5">
+                    <p class="waiting__title">от <span>5000</span> за сутки</p>
+                    <p class="waiting__text">Средний арендный тариф</p>
+                </div>
+                <div class="waiting__item item6">
+                    <p class="waiting__title">от <span>50%</span> годовых</p>
+                    <p class="waiting__text">Высокая доходность инвестора</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Таблица -->
+    <section class="section section--large">
+        <div class="container">
+            <h2>Потенциал по охвату туристов в проект – 2.6 млн. человек в год (10% от общего потока МО)</h2>
+            <div class="container__inner">
+                <div class="table">
+                    <div class="table__row">
+                        <div class="table__item table__item--head">
+                            <p class="table__headline">Аренда дома/ сдача номера в гостинице</p>
+                        </div>
+                        <div class="table__item">
+                            <p class="table__text">От 5 000 руб. в сутки</p>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        От 60 м² до 6 чел.<br>
+                                        (315 000 руб. в месяц)
+                                    </li>
+                                    <li class="table-list__item">
+                                        От 120 м² – до 25 чел.<br>
+                                        (630 000 руб. в месяц)
+                                    </li>
+                                </ul>
+                                <p class="table__small">Окупаемость 15 месяцев</p>
+                            </div>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        От 400 м² – до 21 чел.<br>
+                                        (2 205 000 руб. в месяц)
+                                    </li>
+                                    <li class="table-list__item">
+                                        От 1020 м² – до 42 чел.<br>
+                                        (5 355 000 руб. в месяц)
+                                    </li>
+                                </ul>
+                                <p class="table__small">Окупаемость 15 месяцев</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__row">
+                        <div class="table__item table__item--head">
+                            <p class="table__headline">Получение доходов от УК</p>
+                        </div>
+                        <div class="table__item">
+                            <p class="table__text">300 - 500 руб. – билет за вход</p>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        Билеты на мероприятие:
+                                    </li>
+                                    <li class="table-list__item">
+                                        Стандарт: 200-300 руб.<br>
+                                        (22 750 000 руб. в мес. – 60% от общего объема билетов)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        GOLD: 1000 руб. - включены все мероприятия комплекса (60 670 000 руб. 40% от общего объема билетов)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__row">
+                        <div class="table__item table__item--head">
+                            <p class="table__headline">Увеличение стоимости актива</p>
+                        </div>
+                        <div class="table__item">
+                            <p class="table__text">Стоимость 1 сотки ИЖС:<br> д. Жуклино – 48 000 руб.</p>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        МО - 10 км. от <br>
+                                        д. Жуклино – 90 000 руб.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="table__item">
+                            <div class="table__inner">
+                                <ul class="table-list">
+                                    <li class="table-list__item">
+                                        Владимирская область, Александровский район - 50 000 руб. - 10 км от д. Жуклино
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table__row">
+                        <div class="table__item table__item--head">
+                            <p class="table__headline">Строительство по себестоимости</p>
+                        </div>
+                        <div class="table__item">
+                            <p class="table__text">Пятно застройки выдается на безвозмездной основе под строительство домовладения</p>
+                        </div>
+                        <div class="table__item table__item--two">
+                            <div class="table__inner">
+                                <p class="table__small">Строительство объекта домовладения по себестоимости - 70 000 руб. за м²</p>
+                                <p class="table__small">Коммуникации учтены в себестоимости строительства за счет целевого назначения</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма -->
+    <section class="section section--large">
+        <div class="container">
+            <div class="consultation-form">
+                <div class="consultation-form__wrapper">
+                    <div class="consultation-form__top">
+                        <h2 class="consultation-form__title">Получите персональную консультацию 
+                            по инвестиционным предложениям</h2>
+                        <p class="consultation-form__subtitle">Заполните форму ниже, чтобы получить подробную информацию о наших инвестиционных решениях и возможностях. Наш специалист свяжется с вами в ближайшее время</p>
+                    </div>
+                    <form action="" class="form form-consultation">
+                        <input type="text" class="input input--green" name="name" placeholder="Ваше имя">
+                        <input type="tel" class="input input--green" name="phone" placeholder="Номер телефона">
+                        <button class="form-consultation__btn">Заказать звонок</button>
+                    </form>
+                </div>
+                <img src="assets/img/photo/consult-form.png" class="consultation-form__img" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Источники дохода -->
+    <section class="section section--large">
+        <div class="container">
+            <h2>Источники дохода</h2>
+            <div class="container__inner">
+                <div class="sources">
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от сдачи помещений в аренду</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от банного комплекса</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от ресторанного бизнеса</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от продажи туристических путевок</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доход от размещения рекламы и спонсорских пакетов</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от сдачи гостиничных номеров</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Доходы от продажи сувениров, одежды, атрибутики</p>
+                    </div>
+                    <div class="sources__item">
+                        <img src="assets/img/icons/check.svg" class="sources__img" alt="">
+                        <p class="sources__text">Прокат лошадей, снегоходов, лыж, велосипедов и др.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Динамика турпотока -->
+    <section class="section section--large">
+        <div class="left-padding">
+            <h2>Динамика турпотока</h2>
+            <div class="container__inner">
+                <div class="schedule">
+                    <img src="assets/img/photo/schedule.png" class="schedule__img" alt="">
+                    <div class="schedule__right">
+                        <div class="schedule__wrapper">
+                            <p class="schedule__text">Анализ туристического потока показывает, что значительная часть туристов сосредоточена в крупных городах и основных достопримечательностях, таких как Сергиев Посад.</p>
+                            <p class="schedule__text"><b>Это подчеркивает необходимость развития новых туристических комплексов, таких как "Центр Силы"</b>, которые могут предложить уникальные и разнообразные впечатления, способные привлечь туристов и способствовать более равномерному распределению туристического потока по региону.</p>
+                        </div>
+                        <small class="schedule__source">*Источник: www.национальныепроекты.рф/news/s-nachala-2023-goda-turpotok-v-podmoskove-vyros-na-7-3-/</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О компании -->
+    <section class="section section--large">
+        <div class="container">
+            <h2>О компании</h2>
+            <div class="container__inner">
+                <div class="about">
+                    <div class="about__top">
+                        <div class="about-advantages">
+                            <div class="about-advantages__item">
+                                <span class="about-advantages__text">опыт более</span>
+                                <p class="about-advantages__title"><span>20</span> лет</p>
+                            </div>
+                            <div class="about-advantages__item">
+                                <span class="about-advantages__text">создание более</span>
+                                <p class="about-advantages__title"><span>12</span> загородных
+                                    поселков</p>
+                                <span class="about-advantages__subtitle">поселков "с чистого поля"
+                                    до "жилого комплекса"</span>
+                            </div>
+                            <div class="about-advantages__item">
+                                <span class="about-advantages__text">ключевой принцип</span>
+                                <p class="about-advantages__title"><span>ТСН</span></p>
+                                <span class="about-advantages__subtitle">товарищество собственников
+                                    недвижимости</span>
+                            </div>
+                        </div>
+                        <div class="about__description">
+                            <p class="about__text">Члены ТСН - пропорционально и за свой счет создают и эксплуатируют инфраструктуру комплекса</p>
+                        </div>
+                    </div>
+                    <div class="about__bottom">
+                        <div class="object">
+                            <p class="object__subtitle">Создание и управление комплексом "Центр Силы" - аналогичен проектам, созданных командой:</p>
+                            <div class="object__wrapper">
+                                <div class="object__item">
+                                    <p class="object__text">ТСН: "Сычеки", "Пруды Буй Опушка"</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">СНТ: "Дальние Вешки"</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">ДПК: "Площево", "Алексино","Площево-2"</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">Спортвилль Дмитровка (Дмитровский р-н, д. Нерощино)</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">Лесной парк (Дмитровский р-н, д. Андрейково)</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">Лесная поляна (Дмитровский р-н, д. Андрейково)</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">Шале Яхрома (Дмитровский р-н, д. Круглино)</p>
+                                </div>
+                                <div class="object__item">
+                                    <p class="object__text">Яхромские горки-2 (Дмитровский р-н, д. Астрецово)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма -->
+    <section class="section section--xlarge">
+        <div class="container">
+            <div class="feedback-form">
+                <div class="feedback-form__wrapper">
+                    <div class="feedback-form__top">
+                        <h2 class="feedback-form__title">Остались вопросы?</h2>
+                        <p class="feedback-form__subtitle">Оставьте номер телефона и получите консультацию по проекту и нашим предложениям</p>
+                    </div>
+                    <form action="" class="form form-feedback">
+                        <input type="text" class="input input--green" name="name" placeholder="Ваше имя">
+                        <input type="tel" class="input input--green" name="phone" placeholder="Номер телефона">
+                        <button class="form-feedback__btn">Отправить</button>
+                    </form>
+                </div>
+                <img src="assets/img/photo/feedback-form.png" class="feedback-form__img" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__left">
+                    <div class="footer__top">
+                        <a href="/" class="logo"><img src="assets/img/icons/logo.png" alt=""></a>
+                        <ul class="footer-menu">
+                            <li class="footer-menu__item">
+                                <a href="" class="footer-menu__link">О проекте</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a href="" class="footer-menu__link">Ген-план</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a href="" class="footer-menu__link">Инвесторам</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a href="" class="footer-menu__link">Галерея</a>
+                            </li>
+                            <li class="footer-menu__item">
+                                <a href="" class="footer-menu__link">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <p class="footer-social__text">Мы в соц сетях</p>
+                        <ul class="footer-social__list">
+                            <li class="footer-social__item">
+                                <a href="" class="footer-social__link">
+                                    <img src="assets/img/icons/vk.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="footer-social__item">
+                                <a href="" class="footer-social__link">
+                                    <img src="assets/img/icons/tg.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="copyright">© 2024 Туристический комплекс “Центр силы”. Все права защищены</p>
+                </div>
+                <div class="footer__right">
+                    <ul class="contacts-list">
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__title">Наш адрес</span>
+                            <p class="contacts-list__text">Владимирская обл, Александровский р-н, Каринское с.п., д.Жуклино</p>
+                        </li>
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__title">Email</span>
+                            <a href="mailto:center-power@mail.ru" class="contacts-list__text">center-power@mail.ru</a>
+                        </li>
+                        <li class="contacts-list__item">
+                            <span class="contacts-list__title">Телефон</span>
+                            <a href="tel:89265304484" class="contacts-list__text">8(926)530-44-84</a>
+                        </li>
+                    </ul>
+                    <div class="info">
+                        <button class="btn info__btn btn--green btn-hover btn-hover--green">Обсудить проект</button>
+                        <ul class="info__list">
+                            <li class="info__item">
+                                <p>ОГРН: 1073339001636</p>
+                            </li>
+                            <li class="info__item">
+                                <p>ИНН/КПП: 3311016390/331101001</p>
+                            </li>
+                            <li class="info__item">
+                                <a href="">Политика конфиденциальности</a>
+                            </li>
+                        </ul>
+                        <a href="#top" class="info__back">Вернуться наверх</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/libs/swiper-bundle.min.js"></script>
+    <script src="assets/js/slider.js"></script>
 </body>
 </html>

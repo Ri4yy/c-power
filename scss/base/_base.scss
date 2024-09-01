@@ -1,0 +1,117 @@
+@import url("../assets/fonts/stylesheet.css");
+
+html,
+body {
+    font-family: 'Gilroy';
+    scroll-behavior: smooth;
+}
+
+// Заголовки
+h1 {
+    font-weight: 700;
+    font-size: 100px;
+    color: $main-color;
+}
+h2 {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    color: $main-color;
+}
+h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 130%;
+    color: $main-text;
+}
+
+.title {
+
+    &--xs {
+        max-width: 500px;
+    }
+}
+
+// База
+.container {
+    max-width: 1760px;
+    width: 100%;
+    margin: 0 auto;
+
+    &__inner {
+        margin-top: 40px;
+    }
+
+    @media(max-width: 1760px) {
+        padding: 0 24px;
+    }
+    @media(max-width: 768px) {
+        padding: 0 12px;
+    }
+}
+.section {
+    margin-top: 100px;
+
+    &--large {
+        margin-top: 180px;
+
+        @media(max-width: $breakpoint1024) {
+            margin-top: 120px;
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 90px;
+        }
+    }
+    &--xlarge {
+        margin-top: 220px;
+
+        @media(max-width: $breakpoint1024) {
+            margin-top: 140px;
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 90px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__subtitle {
+        max-width: 1093px;
+        font-weight: 500;
+        font-size: 20px;
+        color: $main-text;
+
+        &--xs {
+            max-width: 470px;
+            text-align: end;
+        }
+    }
+
+    @media(max-width: $breakpoint768) {
+        margin-top: 90px;
+    }
+}
+
+.white-text {
+    color: #fff;
+}
+
+.left-padding {
+    padding-left: calc((100vw - 1760px) / 2) !important;
+
+    @media(max-width: 1760px) {
+        padding-left: 24px !important;
+    }
+    @media(max-width: $breakpoint768) {
+        padding-left: 12px !important;
+    }
+}
+
+
+.no-scroll {
+    overflow: hidden;
+}

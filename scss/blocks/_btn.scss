@@ -1,0 +1,45 @@
+.btn {
+    font-weight: 500;
+    font-size: 18px;
+    color: #F2F8EF;
+    border-radius: 36px;
+
+    &--green {
+        background: $main-color;
+        border: 1px solid $main-color;
+    } 
+    &--border {
+        border: 1px solid $accent-color;
+        color: $main-text;
+    } 
+}
+
+.btn-hover {
+    transition: all .3s;
+
+        &--green {
+            &:hover {
+                background: transparent;
+                color: $main-text;
+            }
+        }
+        &--transparent {
+            &:hover {
+                background: $accent-color;
+                color: #F2F8EF;
+            }
+        }
+}  
+
+.btn-feedback {
+    padding: 16px 24px;
+}
+.btn-pres {
+    padding: 16px 24px;
+}
+.btn-play {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}

@@ -1,0 +1,18 @@
+.hero-advantages {
+    margin-top: 78px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, auto));
+    gap: 60px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 16px;
+        color: $main-text;
+    }
+}
