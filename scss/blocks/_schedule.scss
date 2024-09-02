@@ -23,6 +23,9 @@
     &__right {
         width: calc((760px / 1760px) * 100%);
 
+        display: flex;
+        flex-direction: column;
+
         @media(max-width: $breakpoint1280) {
             width: 100%;
         }
@@ -31,19 +34,49 @@
         border-radius: 40px 0 0 40px;
         background: $green-light;
         padding: 50px 80px;
+
+        @media(max-width: $breakpoint768) {
+            padding: 20px 16px;
+            border-radius: 0;
+            order: 2;
+
+            margin-top: 32px;
+        }
     }
     &__text {
-        font-weight: 500;
+        font-weight: 600;
         font-size: 20px;
         line-height: 150%;
         color: $main-text;
 
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+
         &:nth-of-type(2) {
             margin-top: 20px;
+
+            @media(max-width: $breakpoint768) {
+                margin-top: 12px;;
+            }
         }
     }
     &__source {
         display: block;
         padding: 26px 80px 0 70px;
+
+        @media(max-width: $breakpoint768) {
+            order: 1;
+
+            padding-top: 0;
+            text-align: center;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 0 16px;
+        }
+
+        & a {
+            color: $main-text;
+        }
     }
 }

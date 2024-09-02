@@ -1,6 +1,27 @@
 .footer-social {
     margin-top: 60px;
 
+    @media(max-width: $breakpoint1280) {
+        margin-top: 0;
+
+        order: 3;
+    }
+
+    &--desktop {
+        @media(max-width: $breakpoint1280) {
+            display: none;
+        }
+    }
+    &--mobile {
+        display: none;
+
+        @media(max-width: $breakpoint1280) {
+            margin-block-start: auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
     &__text {
         font-weight: 700;
         font-size: 20px;
@@ -10,5 +31,16 @@
         margin-top: 12px;
         display: flex;
         gap: 10px;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 8px;
+        }
+    }
+    &__link {
+        @media(max-width: $breakpoint768) {
+            display: flex;
+
+            width: 32px;
+        }
     }
 }

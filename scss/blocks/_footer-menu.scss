@@ -3,6 +3,15 @@
     align-items: center;
     gap: 40px;
 
+    @media(max-width: 1600px) {
+        gap: 20px;
+    }
+    @media(max-width: $breakpoint768) {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+
     &__item {
         display: flex;
     }
@@ -11,5 +20,10 @@
         font-size: 18px;
         line-height: 150%;
         color: $main-text;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+            font-weight: 600;
+        }
     }
 }

@@ -532,8 +532,8 @@
 
     <!-- Динамика турпотока -->
     <section class="section section--large">
-        <div class="left-padding">
-            <h2>Динамика турпотока</h2>
+        <div class="left-padding left-padding--none">
+            <h2 class="title--padding">Динамика турпотока</h2>
             <div class="container__inner">
                 <div class="schedule">
                     <img src="assets/img/photo/schedule.png" class="schedule__img" alt="">
@@ -556,7 +556,7 @@
                             <p class="schedule__text">Анализ туристического потока показывает, что значительная часть туристов сосредоточена в крупных городах и основных достопримечательностях, таких как Сергиев Посад.</p>
                             <p class="schedule__text"><b>Это подчеркивает необходимость развития новых туристических комплексов, таких как "Центр Силы"</b>, которые могут предложить уникальные и разнообразные впечатления, способные привлечь туристов и способствовать более равномерному распределению туристического потока по региону.</p>
                         </div>
-                        <small class="schedule__source">*Источник: www.национальныепроекты.рф/news/s-nachala-2023-goda-turpotok-v-podmoskove-vyros-na-7-3-/</small>
+                        <small class="schedule__source">*Источник: <a href="www.национальныепроекты.рф/news/s-nachala-2023-goda-turpotok-v-podmoskove-vyros-na-7-3-/">www.национальныепроекты.рф/news/s-nachala-2023-goda-turpotok-v-podmoskove-vyros-na-7-3-/</a></small>
                     </div>
                 </div>
             </div>
@@ -564,7 +564,7 @@
     </section>
 
     <!-- О компании -->
-    <!-- <section class="section section--large">
+    <section class="section section--large">
         <div class="container">
             <h2>О компании</h2>
             <div class="container__inner">
@@ -627,10 +627,10 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Форма -->
-    <!-- <section class="section section--xlarge">
+    <section class="section section--xlarge">
         <div class="container">
             <div class="feedback-form">
                 <div class="feedback-form__wrapper">
@@ -647,10 +647,10 @@
                 <img src="assets/img/photo/feedback-form.png" class="feedback-form__img" alt="">
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Подвал -->
-    <!-- <footer class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer__left">
@@ -674,7 +674,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-social">
+                    <div class="footer-social footer-social--desktop">
                         <p class="footer-social__text">Мы в соц сетях</p>
                         <ul class="footer-social__list">
                             <li class="footer-social__item">
@@ -689,23 +689,44 @@
                             </li>
                         </ul>
                     </div>
-                    <p class="copyright">© 2024 Туристический комплекс “Центр силы”. Все права защищены</p>
+                    <div class="copyright">
+                        <p class="copyright__text">© 2024 Туристический комплекс “Центр силы”. Все права защищены</p>
+                        <a href="#top" class="info__back info__back--mobile">Вернуться наверх</a>
+                    </div>
                 </div>
                 <div class="footer__right">
-                    <ul class="contacts-list">
-                        <li class="contacts-list__item">
-                            <span class="contacts-list__title">Наш адрес</span>
-                            <p class="contacts-list__text">Владимирская обл, Александровский р-н, Каринское с.п., д.Жуклино</p>
-                        </li>
-                        <li class="contacts-list__item">
-                            <span class="contacts-list__title">Email</span>
-                            <a href="mailto:center-power@mail.ru" class="contacts-list__text">center-power@mail.ru</a>
-                        </li>
-                        <li class="contacts-list__item">
-                            <span class="contacts-list__title">Телефон</span>
-                            <a href="tel:89265304484" class="contacts-list__text">8(926)530-44-84</a>
-                        </li>
-                    </ul>
+                    <div class="footer__middle">
+                        <ul class="contacts-list">
+                            <li class="contacts-list__item">
+                                <span class="contacts-list__title">Наш адрес</span>
+                                <p class="contacts-list__text">Владимирская обл, Александровский р-н, Каринское с.п., д.Жуклино</p>
+                            </li>
+                            <li class="contacts-list__item">
+                                <span class="contacts-list__title">Email</span>
+                                <a href="mailto:center-power@mail.ru" class="contacts-list__text">center-power@mail.ru</a>
+                            </li>
+                            <li class="contacts-list__item">
+                                <span class="contacts-list__title">Телефон</span>
+                                <a href="tel:89265304484" class="contacts-list__text">8(926)530-44-84</a>
+                            </li>
+                        </ul>
+
+                        <div class="footer-social footer-social--mobile">
+                            <p class="footer-social__text">Мы в соц сетях</p>
+                            <ul class="footer-social__list">
+                                <li class="footer-social__item">
+                                    <a href="" class="footer-social__link">
+                                        <img src="assets/img/icons/vk.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="footer-social__item">
+                                    <a href="" class="footer-social__link">
+                                        <img src="assets/img/icons/tg.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="info">
                         <button class="btn info__btn btn--green btn-hover btn-hover--green">Обсудить проект</button>
                         <ul class="info__list">
@@ -719,12 +740,12 @@
                                 <a href="">Политика конфиденциальности</a>
                             </li>
                         </ul>
-                        <a href="#top" class="info__back">Вернуться наверх</a>
+                        <a href="#top" class="info__back info__back--desktop">Вернуться наверх</a>
                     </div>
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/libs/swiper-bundle.min.js"></script>

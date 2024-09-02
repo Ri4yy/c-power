@@ -5,32 +5,112 @@
         display: flex;
         justify-content: space-between;
         padding: 60px 0;
+
+        @media(max-width: $breakpoint1280) {
+            flex-direction: column;
+            padding: 30px 0;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 20px 0;
+        }
     }
 
     &__left {
         width: calc((880px / 1760px) * 100%);
         display: flex;
         flex-direction: column;
+
+        @media(max-width: 1600px) {
+            width: 55%;
+        }
+        @media(max-width: $breakpoint1440) {
+            width: 60%;
+        }
+        @media(max-width: $breakpoint1280) {
+            display: contents;
+        }
     }
 
     &__top {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media(max-width: 1600px) {
+            justify-content: start;
+            gap: 20px;
+        }
+        @media(max-width: $breakpoint1280) {
+            order: 1;
+        }
+        @media(max-width: $breakpoint768) {
+            flex-direction: column;
+            align-items: start;
+            gap: 48px;
+        }
     }
 
+    &__middle {
+        display: contents;
+        width: 100%;
+
+        @media(max-width: $breakpoint1280) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
     &__right {
         max-width: 620px;
         display: flex;
         justify-content: space-between;
         gap: 60px;
+
+        @media(max-width: $breakpoint1440) {
+            max-width: 500px;
+            gap: 30px;
+        }
+        @media(max-width: $breakpoint1280) {
+            margin-top: 40px;
+
+            max-width: 100%;
+            order: 2;
+        }
+
+        @media(max-width: $breakpoint768) {
+            flex-direction: column;
+        }
     }
 }
 
 .copyright {
     margin-block-start: auto;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    color: $main-text;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 12px;
+        }
+    }
+
+    @media(max-width: $breakpoint1280) {
+        margin-top: 40px;
+
+        order: 4;
+    }
+    @media(max-width: $breakpoint768) {
+        margin-top: 20px;
+    }
+    @media(max-width: $breakpoint480) {
+        margin-top: 15px;
+    }
 }

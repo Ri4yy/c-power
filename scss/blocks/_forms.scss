@@ -75,6 +75,15 @@
 
     width: calc((1038px / 1640px) * 100%);
 
+    @media(max-width: $breakpoint1024) {
+        width: 100%;
+    }
+    @media(max-width: $breakpoint768) {
+        margin-top: 24px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
     &__btn {
         border-radius: 36px;
         padding: 16px 28px;
@@ -84,6 +93,13 @@
         font-size: 18px;
         color: #fff;
         white-space: nowrap;
+
+        @media(max-width: $breakpoint480) {
+            font-size: 14px;
+            padding: 12px;
+
+            width: 100%;
+        }
     }
 }
 

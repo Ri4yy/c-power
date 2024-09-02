@@ -43,6 +43,13 @@ h3 {
     &--xl {
         max-width: 1160px;
     }
+
+    &--padding {
+
+        @media(max-width: $breakpoint768) {
+            padding-left: 16px;
+        }
+    }
 }
 
 // База
@@ -143,11 +150,21 @@ h3 {
     @media(max-width: $breakpoint768) {
         padding-left: 16px !important;
     }
+
+    &--none {
+
+        @media(max-width: $breakpoint768) {
+            padding: 0 !important;
+        }
+    }
 }
 
 
 .horizontal-scroll {
-    overflow-x: scroll;
+
+    @media(max-width: $breakpoint1280) {
+        overflow-x: scroll;
+    }
 }
 .no-scroll {
     overflow: hidden;

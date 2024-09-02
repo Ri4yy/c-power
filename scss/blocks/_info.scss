@@ -6,8 +6,23 @@
     flex-direction: column;
     align-items: flex-end;
 
+    @media(max-width: $breakpoint1440) {
+        flex-shrink: 0;
+    }
+    @media(max-width: $breakpoint768) {
+        align-items: flex-start;
+    }
+
     &__btn {
         padding: 16px 28px;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 40px;
+            padding: 12px 16px;
+            font-size: 14px;
+
+            order: 2;
+        }
     }
 
     &__list {
@@ -16,6 +31,11 @@
         display: flex;
         flex-direction: column;
         gap: 8px;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 0;
+            order: 1;
+        }
     }
 
     &__item {
@@ -26,6 +46,14 @@
             line-height: 150%;
             text-align: right;
             color: $main-text;
+
+            @media(max-width: $breakpoint1440) {
+                font-size: 16px;
+            }
+            @media(max-width: $breakpoint768) {
+                text-align: start;
+                font-size: 14px;
+            }
         }
         & a {
             text-decoration: underline;
@@ -37,5 +65,22 @@
         font-weight: 500;
         font-size: 16px;
         color: $main-color;
+
+        &--desktop {
+            @media(max-width: $breakpoint1280) {
+                display: none;
+            }
+        }
+        &--mobile {
+            display: none;
+
+            @media(max-width: $breakpoint1280) {
+                margin-top: 0;
+                display: flex;
+            }
+            @media(max-width: $breakpoint768) {
+                display: none;
+            }
+        }
     }
 }

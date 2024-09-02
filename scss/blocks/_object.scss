@@ -6,12 +6,34 @@
         line-height: 150%;
         color: $main-text;
         max-width: 500px;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 16px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 14px;
+        }
     }
     &__wrapper {
         margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 20px;
+
+        @media(max-width: $breakpoint1280) {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+        @media(max-width: $breakpoint1024) {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 20px;
+
+            gap: 8px;
+        }
+        @media(max-width: $breakpoint480) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
     &__item {
         display: flex;
@@ -21,6 +43,13 @@
         border-radius: 30px;
         padding: 40px;
         background: $green-light;
+
+        @media(max-width: $breakpoint768) {
+            border-radius: 16px;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 28px 0;
+        }
     }
     &__text {
         font-weight: 600;
@@ -28,5 +57,9 @@
         line-height: 150%;
         color: $main-text;
         text-align: center;
+
+        @media(max-width: $breakpoint480) {
+            font-size: 12px;
+        }
     }
 }
