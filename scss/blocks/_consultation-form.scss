@@ -4,8 +4,20 @@
     padding: 60px 40px;
     background: $green-light;
 
+    @media(max-width: $breakpoint768) {
+        padding: 40px;
+    }
+    @media(max-width: $breakpoint480) {
+        border-radius: 24px;
+        padding: 24px 16px;
+    }
+
     &__top {
         max-width: 910px;
+
+        @media(max-width: $breakpoint1280) {
+            max-width: 100%;
+        }
     }
     &__subtitle {
         margin-top: 20px;
@@ -13,11 +25,22 @@
         font-size: 20px;
         line-height: 150%;
         color: $main-text;
+
+
+        @media(max-width: $breakpoint480) {
+            font-size: 14px;
+            margin-top: 8px;
+        }
     }
+
     &__img {
         position: absolute;
         right: 40px;
         bottom: 0;
         width: calc((440px / 1680px) * 100%);
+
+        @media(max-width: $breakpoint1280) {
+            display: none;
+        }
     }
 }

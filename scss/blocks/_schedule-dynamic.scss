@@ -1,0 +1,61 @@
+.schedule-dynamic {
+    display: none;
+
+
+    @media(max-width: $breakpoint768) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        max-width: 230px;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 140%;
+        color: $main-text;
+
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        &::before {
+            content: '';
+            display: flex;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+
+            border-radius: 3px;
+            background: $main-color;
+        }
+        &--green {
+            &::before {
+                background: $main-color;
+            }
+        }
+        &--brown {
+            &::before {
+                background: $brown;
+            }
+        }
+        &--light {
+            &::before {
+                background: $green-light;
+            }
+        }
+    }
+    &__img {
+        margin-top: 30px;
+    }
+}

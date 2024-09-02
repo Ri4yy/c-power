@@ -17,6 +17,13 @@ h2 {
     font-size: 48px;
     line-height: 120%;
     color: $main-color;
+
+    @media(max-width: $breakpoint768) {
+        font-size: 32px;
+    }
+    @media(max-width: $breakpoint480) {
+        font-size: 28px;
+    }
 }
 h3 {
     font-weight: 700;
@@ -27,8 +34,14 @@ h3 {
 
 .title {
 
+    &--xxs {
+        min-width: 240px;
+    }
     &--xs {
         max-width: 500px;
+    }
+    &--xl {
+        max-width: 1160px;
     }
 }
 
@@ -40,13 +53,17 @@ h3 {
 
     &__inner {
         margin-top: 40px;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 24px;
+        }
     }
 
     @media(max-width: 1760px) {
         padding: 0 24px;
     }
-    @media(max-width: 768px) {
-        padding: 0 12px;
+    @media(max-width: $breakpoint768) {
+        padding: 0 16px;
     }
 }
 .section {
@@ -78,6 +95,12 @@ h3 {
         align-items: center;
         justify-content: space-between;
         gap: 20px;
+
+
+        @media(max-width: $breakpoint1024) {
+            flex-direction: column;
+            align-items: start;
+        }
     }
     &__subtitle {
         max-width: 1093px;
@@ -85,9 +108,20 @@ h3 {
         font-size: 20px;
         color: $main-text;
 
+        @media(max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 14px;
+        }
+
         &--xs {
             max-width: 470px;
             text-align: end;
+
+            @media(max-width: $breakpoint1024) {
+                text-align: start;
+            }
         }
     }
 
@@ -107,11 +141,14 @@ h3 {
         padding-left: 24px !important;
     }
     @media(max-width: $breakpoint768) {
-        padding-left: 12px !important;
+        padding-left: 16px !important;
     }
 }
 
 
+.horizontal-scroll {
+    overflow-x: scroll;
+}
 .no-scroll {
     overflow: hidden;
 }

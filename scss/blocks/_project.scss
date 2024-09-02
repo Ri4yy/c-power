@@ -2,6 +2,11 @@
     display: flex;
     gap: 30px;
 
+    @media(max-width: $breakpoint768) {
+        flex-direction: column;
+        gap: 24px;
+    }
+
     &__left {
         width: 36%;
         display: flex;
@@ -10,16 +15,56 @@
         border: 1px solid $accent-color;
         border-radius: 60px;
         padding: 32px;
+
+        @media(max-width: $breakpoint1280) {
+            border-radius: 36px;
+            padding: 20px;
+        }
+        @media(max-width: $breakpoint1024) {
+            width: 45%;
+        }
+        @media(max-width: $breakpoint768) {
+            width: 100%;
+            order: 2;
+
+            border: unset;
+            border-radius: unset;
+            padding: 0;
+        }
+    
     }
     &__right {
         width: 64%;
         border-radius: 60px;
         overflow: hidden;
+
+        @media(max-width: $breakpoint1024) {
+            width: 55%;
+        }
+        @media(max-width: $breakpoint768) {
+            width: 100%;
+            order: 1;
+        }
+        @media(max-width: $breakpoint768) {
+            border-radius: 24px;
+        }
     }
     &__img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    &__title {
+
+        @media(max-width: $breakpoint1280) {
+            font-size: 24px;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 20px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 18px;
+        }
     }
     &__subtitle {
         margin-top: 20px;
@@ -28,16 +73,41 @@
         font-weight: 500;
         font-size: 18px;
         color: $main-text;
+
+        @media(max-width: $breakpoint1280) {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 12x;
+        }
     }
     &__description {
         margin-block-start: auto;
         background: $main-color;
         border-radius: 30px;
         padding: 32px 36px;
+
+        @media(max-width: $breakpoint1280) {
+            padding: 20px 24px;
+            border-radius: 24px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 8px 16px;
+            border-radius: 16px;
+        }
     }
     &__text {
         font-weight: 500;
         font-size: 16px;
         color: #fff;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 12px;
+        }
     }
 }

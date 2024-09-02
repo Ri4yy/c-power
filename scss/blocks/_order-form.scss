@@ -3,6 +3,14 @@
     padding: 60px;
     background: #11332A;
 
+    @media(max-width: $breakpoint1024) {
+        padding: 40px;
+    }
+    @media(max-width: $breakpoint480) {
+        border-radius: 24px;
+        padding: 24px 16px;
+    }
+
     &__wrapper {
         max-width: 1024px;
     }
@@ -11,5 +19,10 @@
         margin-top: 20px;
         font-weight: 500;
         font-size: 20px;
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 8px;
+            font-size: 14px;
+        }
     }
 }

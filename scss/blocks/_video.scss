@@ -1,0 +1,43 @@
+.video {
+    display: none;
+    margin-top: 40px;
+    position: relative;
+    width: fit-content;
+    border-radius: 20px;
+
+    padding: 0px 16px;
+    width: 100%;
+
+    @media(max-width: $breakpoint480) {
+        display: block;
+    }
+
+    &__img {
+        border-radius: 20px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        flex-shrink: 1;
+        gap: 2px;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        padding: 10px 14px;
+        border-radius: 36px;
+
+        font-weight: 600;
+        font-size: 12px;
+        color: $main-text;;
+        background: rgba(255, 255, 255, 0.7);
+
+        & svg {
+            height: 9px;
+        }
+    }
+}

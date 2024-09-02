@@ -2,17 +2,46 @@
     margin-top: 78px;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
     gap: 60px;
+
+    @media(max-width: $breakpoint1280) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+        row-gap: 20px;
+    }
+    @media(max-width: $breakpoint1024) {
+        margin-top: 50px;
+    }
+    @media(max-width: $breakpoint768) {
+        margin-top: 36px;
+        grid-template-columns: repeat(auto-fill, minmax(130px, auto));
+        column-gap: 40px;
+    }
+    @media(max-width: $breakpoint768) {
+        column-gap: 20px;
+    }
 
     &__item {
         display: flex;
         align-items: center;
         gap: 26px;
+
+        @media(max-width: $breakpoint768) {
+            gap: 12px;
+        }
     }
     &__text {
         font-weight: 500;
         font-size: 16px;
         color: $main-text;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 12px;
+        }
+    }
+    &__img {
+        @media(max-width: $breakpoint768) {
+            max-height: 32px;
+        }
     }
 }

@@ -3,17 +3,37 @@
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 20px;
 
+    @media(max-width: $breakpoint480) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
     &__item {
         display: flex;
         align-items: center;
         gap: 32px; 
-        height: 140px;
+        min-height: 140px;
 
         border: 1px solid $green-light;
         border-radius: 30px;
         padding: 25px 36px;
         box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.12);
         background: #fff;
+
+        & img {
+
+            @media(max-width: $breakpoint1024) {
+                height: 40px;
+            }
+        }
+
+        @media(max-width: $breakpoint1024) {
+            border-radius: 24px;
+
+            padding: 16px;
+            gap: 16px;
+            min-height: auto;
+        }
     }
 
     &__text {
@@ -21,5 +41,12 @@
         font-size: 20px;
         line-height: 150%;
         color: $main-text;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 16px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 12px;
+        }
     }
 }

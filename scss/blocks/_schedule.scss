@@ -3,13 +3,29 @@
     justify-content: space-between;
     align-items: start;
 
+    @media(max-width: $breakpoint1280) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     &__img {
         width: calc((900px / 1760px) * 100%);
         object-fit: contain;
+
+        @media(max-width: $breakpoint1280) {
+            width: 100%;
+        }
+        @media(max-width: $breakpoint768) {
+            display: none;
+        }
     }
 
     &__right {
         width: calc((760px / 1760px) * 100%);
+
+        @media(max-width: $breakpoint1280) {
+            width: 100%;
+        }
     }
     &__wrapper {
         border-radius: 40px 0 0 40px;

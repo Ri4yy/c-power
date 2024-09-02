@@ -4,6 +4,10 @@
     color: #F2F8EF;
     border-radius: 36px;
 
+    @media(max-width: $breakpoint768) {
+        font-size: 14px;
+    }
+
     &--green {
         background: $main-color;
         border: 1px solid $main-color;
@@ -33,13 +37,32 @@
 
 .btn-feedback {
     padding: 16px 24px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 10px 24px;
+    }
 }
 .btn-pres {
     padding: 16px 24px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 10px 24px;
+    }
+    @media(max-width: $breakpoint480) {
+        padding: 10px 14px;
+    }
 }
 .btn-play {
     padding: 16px 24px;
     display: flex;
     align-items: center;
     gap: 14px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 10px 24px;
+        gap: 10px;
+    }
+    @media(max-width: $breakpoint480) {
+        display: none;
+    }
 }

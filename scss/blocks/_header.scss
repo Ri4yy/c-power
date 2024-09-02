@@ -6,6 +6,25 @@
     box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.12);
     overflow: hidden;
 
+    @media(max-width: $breakpoint1280) {
+        padding-bottom: 80px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+    @media(max-width: $breakpoint1024) {
+        padding-bottom: 60px;
+        border-bottom-left-radius: 36px;
+        border-bottom-right-radius: 36px;
+    }
+    @media(max-width: $breakpoint768) {
+        padding-bottom: 40px;
+    }
+    @media(max-width: $breakpoint480) {
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+        padding-bottom: 16px;
+    }
+
     &__wrapper {
         position: relative;
         display: flex;
@@ -13,6 +32,13 @@
         align-items: center;
         padding: 29px 0;
         z-index: 2;
+
+        @media(max-width: $breakpoint768) {
+            padding: 20px 0;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 16px 0;
+        }
     }
 
     &__phone {
@@ -20,9 +46,31 @@
         font-weight: 700;
         font-size: 16px;
         color: #fff;
+        line-height: 1;
 
         &--green {
             color: $main-color;
         }
+        @media(max-width: $breakpoint1024) {
+            color: $main-color;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+            margin-left: auto;
+            margin-right: 12px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 12px;
+        }
+    }
+}
+
+.logo {
+
+    @media(max-width: $breakpoint1024) {
+        max-width: 140px;
+    }
+    @media(max-width: $breakpoint480) {
+        max-width: 100px;
     }
 }
