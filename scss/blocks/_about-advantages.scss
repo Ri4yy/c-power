@@ -5,6 +5,9 @@
     justify-content: space-between;
     width: calc((970px / 1760px) * 100%);
 
+    @media(max-width: $breakpoint1440) {
+        width: 100%;
+    }
     @media(max-width: $breakpoint768) {
         gap: 28px;
         flex-direction: column;

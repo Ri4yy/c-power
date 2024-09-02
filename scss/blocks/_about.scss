@@ -6,6 +6,9 @@
         display: flex;
         justify-content: space-between;
 
+        @media(max-width: $breakpoint1440) {
+            flex-direction: column;
+        }
         @media(max-width: $breakpoint480) {
             flex-direction: column;
         }
@@ -16,17 +19,22 @@
         padding: 30px;
         background: $brown;
         height: fit-content;
-        width: 50%;
+        width: (584px / 1760px) * 100%;
 
+        @media(max-width: $breakpoint1440) {
+            margin-top: 40px;
+        }
+        @media(max-width: $breakpoint1280) {
+            width: 50%;
+        }
         @media(max-width: $breakpoint768) {
             border-radius: 20px;
-
+            width: 100%;
             padding: 12px;
         }
         @media(max-width: $breakpoint480) {
             margin-top: 30px;
 
-            width: 100%;
         }
     }
     &__text {
