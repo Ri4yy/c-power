@@ -4,19 +4,35 @@
     background-size: cover;   
     background-position: 10% 50%;
 
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.12);
+
     @media(max-width: 1760px) {
         padding-left: 24px;
     }
     @media(max-width: $breakpoint1280) {
         background-position: 15% 50%;
+        padding-bottom: 80px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
     }
     @media(max-width: $breakpoint1024) {
         padding: 60px 0 60px 24px;
+        padding-bottom: 60px;
+        border-bottom-left-radius: 36px;
+        border-bottom-right-radius: 36px;
     }
     @media(max-width: $breakpoint768) {
         padding: 36px 0 40px 16px;
         background-image: none;
         background-color: #fff;
+        padding-bottom: 40px;
+    }
+    @media(max-width: $breakpoint480) {
+        border-bottom-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+        padding-bottom: 16px;
     }
 
     &__inner {
@@ -103,4 +119,10 @@
 
 .adv {
     margin-top: 40px;
+    display: none;
+
+    @media(max-width: $breakpoint768) {
+        display: flex;
+        margin-left: 0;
+    }
 }

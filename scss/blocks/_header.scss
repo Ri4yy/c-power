@@ -1,28 +1,35 @@
 .header {
     position: relative;
-    padding-bottom: 100px;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.12);
     overflow: hidden;
 
-    @media(max-width: $breakpoint1280) {
-        padding-bottom: 80px;
-        border-bottom-left-radius: 50px;
-        border-bottom-right-radius: 50px;
-    }
-    @media(max-width: $breakpoint1024) {
-        padding-bottom: 60px;
-        border-bottom-left-radius: 36px;
-        border-bottom-right-radius: 36px;
-    }
-    @media(max-width: $breakpoint768) {
-        padding-bottom: 40px;
-    }
-    @media(max-width: $breakpoint480) {
-        border-bottom-left-radius: 28px;
-        border-bottom-right-radius: 28px;
-        padding-bottom: 16px;
+    &--main {
+        padding-bottom: 100px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.12);
+
+        @media(max-width: $breakpoint1440) {
+            padding-bottom: 80px;
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
+        }
+        @media(max-width: $breakpoint1280) {
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        @media(max-width: $breakpoint1024) {
+            padding-bottom: 60px;
+            border-bottom-left-radius: 36px;
+            border-bottom-right-radius: 36px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding-bottom: 40px;
+        }
+        @media(max-width: $breakpoint480) {
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+            padding-bottom: 16px;
+        }
     }
 
     &__wrapper {

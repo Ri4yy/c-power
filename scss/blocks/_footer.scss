@@ -1,6 +1,17 @@
 .footer {
     margin-top: 120px;
 
+    @media(max-width: $breakpoint768) {
+        margin-top: 90px;
+    }
+
+    &--top_md {
+        margin-top: 38px;
+    }
+    &--top_none {
+        margin-top: 0;
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
