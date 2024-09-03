@@ -1,0 +1,127 @@
+.fire-safety {
+    position: relative;
+    margin-top: 260px;
+    padding: 0 calc((100% - 1760px) / 2);
+
+    @media(max-width: 1760px) {
+        padding: 0 24px;
+    }
+    @media(max-width: $breakpoint1024) {
+        margin-top: 140px;
+    }
+    @media(max-width: $breakpoint768) {
+        padding: 0 16px;
+        overflow: hidden;
+    }
+    @media(max-width: $breakpoint480) {
+        margin-top: 90px;
+    }
+
+    &::after {
+        content: url('../assets/img/photo/smoke.png');
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        @media(max-width: $breakpoint768) {
+            content: url('../assets/img/photo/smoke-s.png');
+            left: 0;
+            // width: 100%;
+        }
+        @media(max-width: $breakpoint480) {
+            left: -65%;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        border-radius: 40px;
+        padding: 56px 80px;
+
+        background: rgba(225, 81, 71, 0.1);
+
+        @media(max-width: $breakpoint1024) {
+            padding: 32px 40px 220px 40px;
+        }
+        @media(max-width: $breakpoint480) {
+            border-radius: 24px;
+            padding: 32px 16px 220px 16px;
+        }
+    }
+
+    &__hit {
+        border: 2px solid #e15147;
+        border-radius: 8px;
+        padding: 8px 16px 4px 16px;
+        background: #e15147;
+        width: fit-content;
+
+        @media(max-width: $breakpoint480) {
+            padding: 6px 10px 2px 10px;
+        }
+
+        & p {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 130%;
+            text-align: center;
+            color: #fff;
+
+            @media(max-width: $breakpoint480) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__title {
+        margin-top: 20px;
+
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 120%;
+        color: #e15147;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 12px;
+            font-size: 28px;
+        }
+    }
+    &__text {
+        max-width: 690px;
+        margin-top: 32px;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1024) {
+            margin-top: 24px;
+            font-size: 18px;
+
+            width: 80%;
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 24px;
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 80px;
+        z-index: 1;
+
+        @media(max-width: $breakpoint1280) {
+            width: 25%;
+            right: -10px;
+        }
+        @media(max-width: $breakpoint768) {
+            max-width: 150px;
+            width: 100%;
+            right: 0;
+        }
+    }
+}

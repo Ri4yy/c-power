@@ -1,0 +1,106 @@
+.hero-investor {
+    background-image: url('../assets/img/bg/investors-bg.png');
+    padding: 180px 0 75px calc((100% - 1760px) / 2);
+    background-size: cover;   
+    background-position: 10% 50%;
+
+    @media(max-width: 1760px) {
+        padding-left: 24px;
+    }
+    @media(max-width: $breakpoint1280) {
+        background-position: 15% 50%;
+    }
+    @media(max-width: $breakpoint1024) {
+        padding: 60px 0 60px 24px;
+    }
+    @media(max-width: $breakpoint768) {
+        padding: 36px 0 40px 16px;
+        background-image: none;
+        background-color: #fff;
+    }
+
+    &__inner {
+        margin-top: 40px;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media(max-width: $breakpoint1024) {
+            margin-top: 24px;
+        }
+        @media(max-width: $breakpoint768) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, auto));
+        }
+        &--desktop {
+            @media(max-width: $breakpoint768) {
+                display: none;
+            }
+        }
+    }
+    &__row {
+        display: flex;
+        gap: 16px;
+
+        @media(max-width: $breakpoint1024) {
+            flex-wrap: wrap;
+        }
+        @media(max-width: $breakpoint768) {
+            display: contents;
+        }
+    }
+    &__wrapper {
+        // width: (810px / 1760px) * 100%;
+        max-width: 820px;
+        width: 100%;
+    }   
+    &__item {
+        border: 1px solid $green-light;
+        border-radius: 16px;
+        box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.12);
+        background: #fff;
+        padding: 17px 20px;
+
+        @media(max-width: $breakpoint1024) {
+            padding: 14px 16px;
+        }
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 130%;
+        color: $brown;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 28px;
+        }
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 14px;
+        }
+    }
+    &__btn {
+        border: 1px solid $main-color;
+        color: $main-text !important;
+    }
+
+    &__address {
+        display: none;
+
+        @media(max-width: $breakpoint768) {
+            display: flex;
+            margin-left: 0;
+        }
+    }
+}
+
+.adv {
+    margin-top: 40px;
+}

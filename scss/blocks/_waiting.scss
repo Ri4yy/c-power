@@ -41,6 +41,8 @@
             "a a ."
             "b c d"
             "e f .";
+            
+            margin-left: 16px;
         }
         @media(max-width: $breakpoint768) {
             padding-right: 16px;
@@ -51,6 +53,7 @@
             "b c"
             "d e"
             "f .";
+
         }
         @media(max-width: $breakpoint480) {
             grid-template-columns: 1fr;
@@ -63,7 +66,6 @@
             "e"
             "f";
 
-            margin-left: 16px;
         }
 
         & .waiting__item--first {
@@ -74,12 +76,12 @@
             box-shadow: none;
             background: none;
 
+            @media(max-width: $breakpoint1280) {
+                margin-left: -16px;
+            }
             @media(max-width: $breakpoint768) {
                 padding: 54px 0 54px 0;
                 margin-bottom: 40px;
-            }
-            @media(max-width: $breakpoint480) {
-                margin-left: -16px;
             }
 
             & .waiting__text {

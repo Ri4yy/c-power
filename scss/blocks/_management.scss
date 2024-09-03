@@ -1,0 +1,79 @@
+.management {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+
+    @media(max-width: $breakpoint1280) {
+        gap: 60px;
+    }
+    @media(max-width: $breakpoint1024) {
+        flex-direction: column;
+        align-items: start;
+
+        gap: 30px;
+    }
+
+    &__img {
+        width: (900px / 1920px) * 100%;
+        object-fit: cover;
+
+        @media(max-width: $breakpoint1024) {
+            max-width: 550px;
+            width: 100%;
+        }
+        @media(max-width: $breakpoint768) {
+            max-width: 450px;
+        }
+        @media(max-width: $breakpoint480) {
+            display: none;
+        }
+    }
+    &__wrapper {
+        max-width: 560px;
+
+        @media(max-width: $breakpoint1280) {
+            max-width: 650px;
+        }
+        @media(max-width: $breakpoint1024) {
+            max-width: 100%;
+            padding: 0 24px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 0 16px;
+        }
+    }
+    &__list {
+        margin-top: 40px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media(max-width: $breakpoint1024) {
+            margin-top: 20px;
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 16px;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+            gap: 12px;
+        }
+
+        &::before {
+            content: url('../assets/img/icons/manag.svg');
+            height: 24px;
+        }
+    }
+}

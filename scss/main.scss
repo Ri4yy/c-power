@@ -4,9 +4,11 @@
 @import "./base/base";
 // Blocks
 @import "./blocks/header";
+@import "./blocks/header-investor";
 @import "./blocks/menu-nav";
 @import "./blocks/footer";
 @import "./blocks/hero";
+@import "./blocks/hero-investor";
 @import "./blocks/hero-advantages";
 @import "./blocks/video";
 @import "./blocks/project";
@@ -31,4 +33,9 @@
 @import "./blocks/contacts-list";
 @import "./blocks/info";
 @import "./blocks/table";
+@import "./blocks/complex";
+@import "./blocks/problem";
+@import "./blocks/guest";
+@import "./blocks/management";
+@import "./blocks/fire-safety";
 @import "./blocks/btn";

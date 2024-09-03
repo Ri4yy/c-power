@@ -1,0 +1,128 @@
+.guest {
+    $padding: 12px;
+    $outerBorder: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    
+    @media(max-width: $breakpoint1440) {
+        flex-direction: column;
+        align-items: start;
+        gap: 20px;
+    }
+    @media(max-width: $breakpoint768) {
+        $outerBorder: 48px;
+    }
+
+    &__left {
+        max-width: 700px;
+        width: 100%;
+
+        @media(max-width: $breakpoint1440) {
+            max-width: 100%;
+        }
+    }
+    &__description {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 18px;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+
+        &:nth-of-type(1) {
+            margin-top: 40px;
+
+            @media(max-width: $breakpoint768) {
+                font-size: 14px;
+                margin-top: 20px;
+            }
+        }
+        &:nth-of-type(2) {
+            margin-top: 20px;
+        }
+    }
+    &__wrapper {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+
+        width: 50%;
+
+        @media(max-width: $breakpoint1440) {
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
+        @media(max-width: $breakpoint768) {
+            grid-template-columns: 1fr;
+        }
+        @media(max-width: $breakpoint480) {
+            gap: 28px;
+        }
+    }
+
+    &__item {
+        padding: 12px;
+        border-radius: $outerBorder;
+
+        background: #fff;
+        box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.12);
+
+        @media(max-width: $breakpoint1440) {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 0;
+
+            border-radius: 20px;
+            box-shadow: none;
+            flex-direction: column;
+        }
+    }
+    &__img {
+        aspect-ratio: 16/9;
+        border-radius: $outerBorder - $padding;
+
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+
+        @media(max-width: $breakpoint1440) {
+            width: 50%;
+        }
+        @media(max-width: $breakpoint480) {
+            width: 100%;
+        }
+    }
+    &__text {
+        margin-top: 24px;
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1440) {
+            margin-top: 0;
+            text-align: start;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 16px;
+        }
+        @media(max-width: $breakpoint480) {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
