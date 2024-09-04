@@ -76,6 +76,14 @@ h3 {
 .section {
     margin-top: 100px;
 
+    &--medium {
+        margin-top: 80px;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 40px !important;
+        }
+    }
+
     &--large {
         margin-top: 180px;
 

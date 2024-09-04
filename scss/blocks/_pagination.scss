@@ -1,0 +1,38 @@
+.pagination {
+    display: flex;
+    gap: 8px;
+
+    &__item  {
+        display: flex;
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+
+        background: $green-light;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1;
+        color: $main-text;
+
+        @media(max-width: $breakpoint480) {
+            border-radius: 6px;
+
+            width: 32px;
+            height: 32px;
+
+            font-size: 14px;
+        }
+
+        &--active {
+            background: $main-color;
+            color: #fff;
+        }
+    }
+}
