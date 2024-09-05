@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../assets/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/libs/fancybox.css">
     <title>Инвесторам</title>
 </head>
 <body>
@@ -57,7 +58,7 @@
                     Инвестиция в коммерческое здание с правом владения земельным участком. Строительство объектов за счет финансирования соучредителей <b>по себестоимости</b>. Доходы полученные от аренды и сдачи номеров <b>принадлежат инвестору</b>.
                 </p>
                 <div class="hero__buttons">
-                    <button class="btn btn--green btn-hover btn-hover--green btn-feedback">Обсудить проект</button>
+                    <button class="btn btn--green btn-hover btn-hover--green btn-feedback open-modal">Обсудить проект</button>
                     <button class="btn hero-investor__btn btn-hover btn-hover--transparent btn-pres">Презентация</button>
                 </div>
                 <div class="hero-investor__inner hero-investor__inner--desktop">
@@ -124,6 +125,8 @@
     </section>
 
     <!-- Тур. комплекс -->
+    <!-- https://vimeo.com/1006747499 - видео на 11 минуты -->
+    <!-- https://vimeo.com/1006746739 - видео на 4 минуты -->
     <section class="section section--large">
         <div class="container">
             <div class="complex">
@@ -133,12 +136,12 @@
                 </div>
                 <div class="complex__video">
                     <img src="../assets/img/photo/complex.png" class="complex__img" alt="">
-                    <button class="complex__btn">
+                    <a href="https://www.youtube.com/watch?v=HNiMtf1r_N8" data-fancybox="video" class="complex__btn">
                         <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.5484 7.16231C14.1505 7.50996 14.1505 8.37909 13.5484 8.72674L1.35484 15.7667C0.752688 16.1143 -6.85385e-07 15.6798 -6.54992e-07 14.9845L-3.95401e-08 0.904572C-9.14745e-09 0.209269 0.752688 -0.225295 1.35484 0.122356L13.5484 7.16231Z" fill="#3A3737" />
                         </svg>
                         <span>Смотреть видео</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -539,6 +542,34 @@
         </div>
     </section>
 
+    <!-- Модальное окно -->
+    <div class="modal modal--form">
+        <div class="modal__body modal__body--form">
+            <div class="modal__wrapper modal__wrapper--form">
+                <button class="close-modal">
+                    <img src="../assets/img/icons/close.svg" alt="">
+                </button>
+                <div class="modal__info">
+                    <div class="modal__header">
+                        <h2 class="modal__title">Получите возможность участвовать в проекте!</h2>
+                        <p class="modal__text">Оставьте ваши контакты и получите персональный инвестиционный план</p>
+                    </div>
+                    <form class="form modal-form">
+                        <input type="text" class="input input--green modal-form__input" name="name" placeholder="Ваше имя">
+                        <input type="tel" class="input input--green modal-form__input" name="phone" placeholder="Номер телефона">
+                        <input type="email" class="input input--green modal-form__input" name="phone" placeholder="Email">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" checked>
+                            <span>Я даю свое согласие на обработку персональных данных</span>
+                        </label>
+                        <button class="btn btn--green btn-hover btn-hover--green modal-form__btn">Отправить запрос</button>
+                    </form>
+                </div>
+                <img src="../assets/img/photo/modal-img.png" class="modal__img" alt="">
+            </div>
+        </div>
+    </div>
+
     <!-- Подвал -->
     <footer class="footer">
         <div class="container">
@@ -637,8 +668,9 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../assets/libs/jquery.min.js"></script>
     <script src="../assets/libs/swiper-bundle.min.js"></script>
+    <script src="../assets/libs/fancybox.umd.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/slider.js"></script>
 </body>

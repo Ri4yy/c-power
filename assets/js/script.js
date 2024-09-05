@@ -23,4 +23,86 @@ document.addEventListener('DOMContentLoaded', (e) => {
         resize()
     })
     resize()
+
+
+    // Модальное окно
+    function showModal(btnOpen, modalBody) {
+        btnOpen.click(function() {
+            modalBody.addClass('active');
+            $('html').addClass('no-scroll');
+            return false;
+        });		
+     
+        $(document).keydown(function(e) {
+            if (e.keyCode === 27) {
+                e.stopPropagation();
+                modalBody.removeClass('active');
+                $('html').removeClass('no-scroll');
+            }
+        });
+        
+        modalBody.click(function(e) {
+            if ($(e.target).closest('.modal__wrapper').length == 0) {
+                $(this).removeClass('active');					
+                $('html').removeClass('no-scroll');
+            }
+        });
+        
+        $('.close-modal').click((e) => {
+            modalBody.removeClass('active');	
+            $('html').removeClass('no-scroll');
+        })
+    }
+    showModal($('.open-modal'), $('.modal--form'));
+
+    // Fancybox
+    Fancybox.bind('[data-fancybox="video"]', {
+        groupAttr: false
+    })
+
+    Fancybox.bind('[data-fancybox="build"]', {
+        compact: false,
+        contentClick: "iterateZoom",
+        Images: {
+          Panzoom: {
+            maxScale: 2,
+          },
+        },
+        wheel: "slide",
+        Toolbar: {
+          display: {
+            left: [
+              "infobar",
+            ],
+            middle : [],
+            right: [
+              "iterateZoom",
+              "close",
+            ],
+          }
+        }
+    }); 
+
+    Fancybox.bind('[data-fancybox="card"]', {
+        compact: false,
+        contentClick: "iterateZoom",
+        Images: {
+          Panzoom: {
+            maxScale: 2,
+          },
+        },
+        wheel: "slide",
+        Toolbar: {
+          display: {
+            left: [
+              "infobar",
+            ],
+            middle : [],
+            right: [
+              "iterateZoom",
+              "close",
+            ],
+          }
+        }
+    });    
 })

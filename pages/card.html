@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../assets/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/libs/fancybox.css">
     <title>Карточка товара</title>
 </head>
 <body>
@@ -55,12 +56,12 @@
                     </div>
                     <div class="swiper swiper-card">
                         <div class="swiper-wrapper swiper-card__wrapper">
-                            <div class="swiper-slide swiper-card__slide">
+                            <a data-fancybox="card" href="../assets/img/photo/card.png" class="swiper-slide swiper-card__slide">
                                 <img src="../assets/img/photo/card.png" class="swiper-card__img" alt="">
-                            </div>
-                            <div class="swiper-slide swiper-card__slide">
+                            </a>
+                            <a data-fancybox="card" href="../assets/img/photo/card.png" class="swiper-slide swiper-card__slide">
                                 <img src="../assets/img/photo/card.png" class="swiper-card__img" alt="">
-                            </div>
+                            </a>
                         </div>
                         <div class="swiper-card__pagination"></div>
                       
@@ -241,8 +242,9 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../assets/libs/jquery.min.js"></script>
     <script src="../assets/libs/swiper-bundle.min.js"></script>
+    <script src="../assets/libs/fancybox.umd.js"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/slider.js"></script>
 </body>

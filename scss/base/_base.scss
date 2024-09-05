@@ -19,10 +19,10 @@ h2 {
     color: $main-color;
 
     @media(max-width: $breakpoint768) {
-        font-size: 32px;
+        font-size: 32px !important;
     }
     @media(max-width: $breakpoint480) {
-        font-size: 28px;
+        font-size: 28px !important;
     }
 }
 h3 {

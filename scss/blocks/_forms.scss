@@ -103,6 +103,39 @@
     }
 }
 
+.modal-form {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: calc((540px / 960px) * 100%);
+
+    @media(max-width: $breakpoint1024) {
+        margin-top: 20px;
+        gap: 12px;
+    }
+    @media(max-width: $breakpoint768) {
+        width: 100%;
+    }
+
+    &__input {
+        @media(max-width: $breakpoint1024) {
+            padding: 14px 20px !important;
+        }
+    }
+
+    &__btn {
+        padding: 16px 20px;
+        width: fit-content;
+
+        @media(max-width: $breakpoint480) {
+            padding: 12px;
+            width: 100%;
+        }
+    }
+}
+
 .input {
     $white: #fff;
 
@@ -133,5 +166,8 @@
         &::placeholder {
             color: $main-text;
         }
+    }
+    &--modal {
+
     }
 }
