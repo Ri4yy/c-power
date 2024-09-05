@@ -1,0 +1,23 @@
+.layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 20px;
+
+    @media(max-width: $breakpoint768) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.12);
+        border: 1px solid $accent-color;
+        border-radius: 40px;
+
+        @media(max-width: $breakpoint768) {
+            border-radius: 16px;
+            box-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.characteristics {
+    margin-top: 36px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 16px;
+
+    @media(max-width: $breakpoint768) {
+        margin-top: 20px;
+    }
+    @media(max-width: $breakpoint480) {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 12px;
+        padding: 12px;
+
+        background: $green-light;
+
+        @media(max-width: $breakpoint480) {
+            border-radius: 12px;
+            padding: 8px;
+        }
+    }
+    &__title {
+        margin-bottom: 8px;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint480) {
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+    }
+    &__name {
+        margin-block-start: auto;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        color: $main-color;
+
+        @media(max-width: $breakpoint480) {
+            font-size: 18px;
+        }
+    }
+}

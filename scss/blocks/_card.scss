@@ -1,0 +1,118 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+
+    @media(max-width: $breakpoint1280) {
+        flex-direction: column;
+        gap: 30px;
+    }
+    @media(max-width: $breakpoint480) {
+        gap: 20px;
+    }
+
+    &__slider {
+        width: calc((870px / 1760px) * 100%);
+
+        @media(max-width: $breakpoint1280) {
+            width: 80%;
+        }
+        @media(max-width: $breakpoint1024) {
+            width: 100%;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        &--desktop {
+
+            @media(max-width: $breakpoint1280) {
+                display: none;
+            }
+        }
+        &--mobile {
+            display: none;
+
+            @media(max-width: $breakpoint1280) {
+                display: flex;
+            }
+        }
+    }
+
+    &__description  {
+        display: flex;
+        flex-direction: column;
+
+        width: calc((830px / 1760px) * 100%);
+
+        @media(max-width: $breakpoint1280) {
+            width: 100%;
+        }
+    }
+    &__name {
+        margin-top: 10px;
+
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 120%;
+        color: $main-color;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 32px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 28px;
+        }
+    }
+    &__price {
+        margin-top: 10px;
+
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint1280) {
+            margin-top: 0;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 20px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        margin-top: 36px;
+        margin-bottom: 10px;
+
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        color: $main-text;
+
+        @media(max-width: $breakpoint768) {
+            margin-top: 20px;
+
+            font-size: 16px;
+        }
+        @media(max-width: $breakpoint480) {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+    }
+    &__btn {
+        margin-block-start: auto;
+        padding: 16px 28px;
+
+        width: fit-content;
+
+        @media(max-width: $breakpoint768) {
+            padding: 12px 24px;
+        }
+        @media(max-width: $breakpoint480) {
+            width: 100%;
+        }
+    }
+}
