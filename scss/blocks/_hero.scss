@@ -52,6 +52,9 @@
         padding: 18px 30px 22px;
         max-width: 540px;
 
+        @media(min-width: 1921px) {
+            max-width: 840px;
+        }
         @media(max-width: $breakpoint1280) {
             max-width: 500px;
         }
