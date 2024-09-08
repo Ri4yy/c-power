@@ -5191,6 +5191,12 @@ h3 {
   right: -600px;
   cursor: grab;
   transform: translate(0, 0);
+  transition: inset 0.3s ease-in-out 0s;
+}
+
+.full-map {
+  max-width: 100%;
+  inset: -480px 0 0 0 !important;
 }
 
 .btn {

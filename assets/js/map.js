@@ -64,3 +64,7 @@ document.addEventListener('mouseup', () => {
     map.style.cursor = 'grab';
     console.log('end')
 });
+
+document.addEventListener('dblclick', event => {
+    map.classList.toggle('full-map');
+})
