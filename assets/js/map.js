@@ -1,6 +1,7 @@
 const map = document.getElementById('interactive-map');
 const container = document.getElementById('map-container');
 
+let isZoom = false;
 let isDragging = false;
 let startX = 0, startY = 0, initialX = 0, initialY = 0;
 
@@ -53,7 +54,7 @@ document.addEventListener('mousemove', (e) => {
         // Применение ограничений
         newX = Math.max(Math.min(newX, maxX), minX);
         newY = Math.max(Math.min(newY, maxY), minY);
-
+        console.log(newX, newY)
         // Применяем новое положение через transform
         map.style.transform = `translate(${newX}px, ${newY}px)`;
     }
@@ -66,5 +67,6 @@ document.addEventListener('mouseup', () => {
 });
 
 document.addEventListener('dblclick', event => {
+    isZoom = true;
     map.classList.toggle('full-map');
 })
