@@ -1,0 +1,15 @@
+#map-container {
+    width: 100%;
+    height: 1080px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+}
+ 
+#interactive-map {
+    position: absolute;
+    top: -280px;
+    right: -600px;
+    cursor: grab;
+    transform: translate(0, 0); 
+}

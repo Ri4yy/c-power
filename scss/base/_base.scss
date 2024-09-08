@@ -58,6 +58,21 @@ h3 {
     width: 100%;
     margin: 0 auto;
 
+    &--left {
+        padding: 0 !important;
+        padding: calc((100% - 1760px) / 2);
+
+        @media(max-width: 1760px) {
+            padding: 0 24px !important;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 0 16px !important;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 0 0 0 16px !important;
+        }
+    }
+
     &__inner {
         margin-top: 40px;
 
