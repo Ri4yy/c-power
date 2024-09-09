@@ -16,46 +16,56 @@ function getTranslateValues(element) {
 // Функция для пересчета границ
 function calculateBoundaries() {
     const rightOffset = -600; // Начальное смещение вправо
-    const topOffset = 280;   // Начальное смещение вниз
+    const topOffset = 280;    // Начальное смещение вниз
 
     let maxX, minX, maxY, minY;
+    let width = window.innerWidth;
 
-    if (isZoom) {
-        // При зуме ограничиваем смещение на 200px от каждого края
-        minX = -100;
-        maxX = 100;
-        minY = -300;
-        maxY = 50;
+    if (width <= 768) {
+        minX = 0;
+        maxX = map.width.baseVal.value - container.offsetWidth + rightOffset;
+        minY = -1025;
+        maxY = 200;
     } else {
-        // Обычные границы при отсутствии зума
-        maxX = map.width.baseVal.value - container.offsetWidth + rightOffset; // Ограничение вправо
-        minX = rightOffset; // Ограничение влево
-
-        maxY = topOffset; // Верхняя граница
-        minY = container.offsetHeight - map.height.baseVal.value + topOffset; // Нижняя граница
+        if (isZoom) {
+            // При зуме ограничиваем смещение на 200px от каждого края
+            minX = -100;
+            maxX = 100;
+            minY = -300;
+            maxY = 50;
+        } else {
+            // Обычные границы при отсутствии зума
+            maxX = map.width.baseVal.value - container.offsetWidth + rightOffset; // Ограничение вправо
+            minX = rightOffset; // Ограничение влево
+    
+            maxY = topOffset; // Верхняя граница
+            minY = container.offsetHeight - map.height.baseVal.value + topOffset; // Нижняя граница
+        }
     }
+    
 
     return { maxX, minX, maxY, minY };
 }
 
-map.addEventListener('mousedown', (e) => {
+// Функция для инициализации перемещения
+function startDragging(clientX, clientY) {
     overlay.classList.add('overlay--hidden');
-
     isDragging = true;
     map.style.cursor = 'grabbing';
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = clientX;
+    startY = clientY;
 
     // Получаем текущее смещение через transform
     const translate = getTranslateValues(map);
     initialX = translate.x;
     initialY = translate.y;
-});
+}
 
-document.addEventListener('mousemove', (e) => {
+// Функция для перемещения карты
+function dragMap(clientX, clientY) {
     if (isDragging) {
-        let dx = e.clientX - startX;
-        let dy = e.clientY - startY;
+        let dx = clientX - startX;
+        let dy = clientY - startY;
         let newX = initialX + dx;
         let newY = initialY + dy;
 
@@ -65,16 +75,55 @@ document.addEventListener('mousemove', (e) => {
         // Применение ограничений
         newX = Math.max(Math.min(newX, maxX), minX);
         newY = Math.max(Math.min(newY, maxY), minY);
-        console.log(newX, newY)
+
         // Применяем новое положение через transform
         map.style.transform = `translate(${newX}px, ${newY}px)`;
     }
-});
+}
 
-document.addEventListener('mouseup', () => {
+function stopDragging() {
     isDragging = false;
     map.style.cursor = 'grab';
-});
+}
+
+// Мышиные события
+map.addEventListener('mousedown', (e) => startDragging(e.clientX, e.clientY));
+document.addEventListener('mousemove', (e) => dragMap(e.clientX, e.clientY));
+document.addEventListener('mouseup', stopDragging);
+
+
+function resize() {
+    let width = window.innerWidth;
+
+    if (width <= 768) {
+        // Тач-события
+        map.addEventListener('touchstart', (e) => {
+            console.log('touch start')
+            $('html').addClass('no-scroll')
+            const touch = e.touches[0];
+            startDragging(touch.clientX, touch.clientY);
+        });
+        document.addEventListener('touchmove', (e) => {
+            console.log('touch move')
+            const touch = e.touches[0];
+            dragMap(touch.clientX, touch.clientY);
+        });
+        document.addEventListener('touchend', () => {
+            stopDragging()
+            $('html').removeClass('no-scroll')
+        });
+    } else {
+        return
+    }
+}
+
+window.addEventListener('resize', () => {
+    resize()
+})
+resize()
+
+
+
 
 // Зум по двойному клику
 document.addEventListener('dblclick', event => {
@@ -91,7 +140,6 @@ window.addEventListener('scroll', function() {
 
     if ((window.scrollY < element_top - w_height) || (window.scrollY > element_bottom)) {
         overlay.classList.remove('overlay--hidden');
-
         map.style.transform = `translate(0px, 0px)`;
     }
 });
@@ -108,21 +156,10 @@ mapLinks.forEach(el => {
         let selfStatus = self.getAttribute('data-status');
         console.log(selfStatus)
 
-        // let color = self.dataset.color;
-        // let currentElement = document.querySelector(`.left-menu a[href="${selfClass}"]`);
-        // let currentPath = currentElement.querySelectorAll('path');
-        // if(currentPath) currentPath.forEach(el => el.style.cssText=`fill: ${color}`);
-        // currentElement.classList.add('text-main-orange')
     })
     el.addEventListener('mouseout', (e) => {
         let self = e.currentTarget;
         self.classList.remove('house-hover')
 
-
-        // let selfClass = self.getAttribute('href');
-        // let currentElement = document.querySelector(`.left-menu a[href="${selfClass}"]`);
-        // let currentPath = currentElement.querySelectorAll('path');
-        // if(currentPath) currentPath.forEach(el => el.style.cssText=`fill: `);
-        // currentElement.classList.remove('text-main-orange')
     })
 })  

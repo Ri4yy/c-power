@@ -1,8 +1,10 @@
 .header {
     position: relative;
-    overflow: hidden;
+    background: #fff;
 
     &--main {
+        overflow: hidden;
+
         padding-bottom: 100px;
         border-bottom-left-radius: 100px;
         border-bottom-right-radius: 100px;
@@ -30,6 +32,14 @@
             border-bottom-right-radius: 28px;
             padding-bottom: 16px;
         }
+
+        & .menu {
+            margin-right: 40px;
+            
+            @media(max-width: $breakpoint1280) {
+                margin-right: 4px;
+            }
+        }
     }
 
     &__wrapper {
@@ -48,6 +58,39 @@
         }
     }
 
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        @media(max-width: $breakpoint768) {
+            margin-left: auto;
+            margin-right: 12px;
+        }
+    }
+    &__mail {
+        margin-top: 4px;
+
+        display: block;
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        line-height: 1;
+
+        &--green {
+            color: $main-color;
+        }
+        @media(max-width: $breakpoint1024) {
+            color: $main-color;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+        @media(max-width: $breakpoint480) {
+            margin-top: 2px;
+            font-size: 12px;
+        }
+    }
     &__phone {
         display: block;
         font-weight: 700;
@@ -63,8 +106,6 @@
         }
         @media(max-width: $breakpoint768) {
             font-size: 14px;
-            margin-left: auto;
-            margin-right: 12px;
         }
         @media(max-width: $breakpoint480) {
             font-size: 12px;
