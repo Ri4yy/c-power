@@ -54,6 +54,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
         })
     }
     showModal($('.open-modal'), $('.modal--form'));
+    
+    showModal($('.interactive-map__img path'), $('.modal--card'));
 
     // Видеоплеер
     $('.click-for-video').click(function () {

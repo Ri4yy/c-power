@@ -1,0 +1,72 @@
+.sector-status {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 1;
+
+    @media(max-width: $breakpoint768) {
+        top: unset;
+        bottom: 12px;
+        right: 12px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        border-radius: 28px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+
+        @media(max-width: $breakpoint768) {
+            border-radius: 16px;
+            padding: 12px;
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        @media(max-width: $breakpoint768) {
+            gap: 8px;
+        }
+    }
+    &__icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        transition: all .2s ease;
+
+        @media(max-width: $breakpoint768) {
+            width: 16px;
+            height: 16px;
+        }
+
+        &--sale {
+            background-color: #5e992f57;
+            border-color: #5e992f;
+        }
+        &--booked {
+            background-color: #ffd1776e;
+            border-color: #ffd177;
+        }
+        &--sold {
+            background-color: #e151475e;
+            border-color: #e15147;
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1;
+        color: #fff;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 12px;
+        }
+    }
+}

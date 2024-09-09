@@ -1,22 +1,101 @@
-#map-container {
-    width: 100%;
-    height: 1080px;
-    overflow: hidden;
+.interactive-map {
     position: relative;
-    border: 1px solid #ccc;
+    background: rgba(86, 96, 61, 1);
+    border-radius: 0 0 100px 100px;
+    box-shadow: 2px 4px 20px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+
+    @media(max-width: $breakpoint768) {
+        border-radius: 0;
+    }
+    
+    &__container {
+        width: 100%;
+        height: 900px;
+        overflow: hidden;
+        position: relative;
+        border: 1px solid $accent-color;
+
+        @media(max-width: $breakpoint768) {
+            height: 500px;
+        }
+    }
+    &__img {
+        position: absolute;
+        top: -280px;
+        right: -600px;
+        cursor: grab;
+        transform: translate(0, 0); 
+        transition: inset 0.3s ease-in-out 0s;
+
+        & path {
+            cursor: pointer;
+        }
+    }
 }
- 
-#interactive-map {
-    position: absolute;
-    top: -280px;
-    right: -600px;
-    cursor: grab;
-    transform: translate(0, 0); 
-    // transition: all .3s ease;
-    transition: inset 0.3s ease-in-out 0s;
-}
+
 
 .full-map {
     max-width: 100%;
     inset: -480px 0 0 0 !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 2;
+    pointer-events: none;
+    transition: all .3s;
+
+    &--hidden {
+        opacity: 0;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+    }
+    &__img {
+        width: 50px;
+        height: 50px;
+    }
+    &__text {
+        margin-top: 40px;
+        max-width: 425px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.sale {
+    fill: rgba(121, 214, 59, 0.4);
+    stroke-width: 2.50px;
+    stroke: #79d63b;
+}
+.booked {
+    fill: rgba(224, 81, 71, 0.4);
+    stroke-width: 2.50px;
+    stroke: #e05147;
+}
+.sold {
+    fill: rgba(225, 187, 52, 0.4);
+    stroke-width: 2.50px;
+    stroke: #e1bb34;
+}
+
+.house-hover {
+    fill: rgba(255, 255, 255, 0.4);
+    stroke-width: 2.50px;
+    stroke: #fff;
 }

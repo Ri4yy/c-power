@@ -24,13 +24,13 @@
         &--green {
             &:hover {
                 background: transparent;
-                color: $main-text;
+                color: $main-color;
             }
         }
         &--transparent {
             &:hover {
                 background: $accent-color;
-                color: #F2F8EF;
+                color: #4b4b4b;
             }
         }
 }  
