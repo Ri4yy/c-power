@@ -32,9 +32,9 @@
         transition: inset 0.3s ease-in-out 0s;
 
         @media(max-width: $breakpoint768) {
-            // scale: 0.5;
             transform-origin: right top;
             top: -500px;
+            right: -1400px;
         }
 
         & path {

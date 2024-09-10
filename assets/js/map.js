@@ -1,10 +1,14 @@
 const map = document.getElementById('interactive-map');
 const container = document.getElementById('map-container');
 const overlay = document.querySelector('.overlay');
+const html = document.querySelector('html')
 
 let isZoom = false;
 let isDragging = false;
 let startX = 0, startY = 0, initialX = 0, initialY = 0;
+let rightOffset = -1400;  // Устанавливаем смещение вправо для разрешений <= 768px
+
+const windowWidth = window.innerWidth;
 
 // Получение текущих координат трансформации
 function getTranslateValues(element) {
@@ -15,22 +19,24 @@ function getTranslateValues(element) {
 
 // Функция для пересчета границ
 function calculateBoundaries() {
-    const rightOffset = -600; // Начальное смещение вправо
-    const topOffset = 280;    // Начальное смещение вниз
-
     let maxX, minX, maxY, minY;
-    let width = window.innerWidth;
+    const width = window.innerWidth;
+    const topOffset = 280;
 
     if (width <= 768) {
-        minX = 0;
+        // Для экранов с шириной <= 768px устанавливаем rightOffset = -1400px
         maxX = map.width.baseVal.value - container.offsetWidth + rightOffset;
+    
+        // Левое ограничение: учитываем, что карта смещена вправо
+        minX = -800;
         minY = -1025;
         maxY = 200;
     } else {
+        rightOffset = -600;  // Используем другое смещение для больших экранов
         if (isZoom) {
             // При зуме ограничиваем смещение на 200px от каждого края
-            minX = -100;
-            maxX = 100;
+            minX = 0;
+            maxX = 0;
             minY = -300;
             maxY = 50;
         } else {
@@ -42,7 +48,9 @@ function calculateBoundaries() {
             minY = container.offsetHeight - map.height.baseVal.value + topOffset; // Нижняя граница
         }
     }
-    
+
+    // Устанавливаем ограничения для правого смещения
+    if (maxX < 0) maxX = 0;
 
     return { maxX, minX, maxY, minY };
 }
@@ -91,52 +99,45 @@ map.addEventListener('mousedown', (e) => startDragging(e.clientX, e.clientY));
 document.addEventListener('mousemove', (e) => dragMap(e.clientX, e.clientY));
 document.addEventListener('mouseup', stopDragging);
 
-
 function resize() {
-    let width = window.innerWidth;
+    const width = window.innerWidth;
+    console.log(width)
 
     if (width <= 768) {
         // Тач-события
         map.addEventListener('touchstart', (e) => {
-            console.log('touch start')
-            $('html').addClass('no-scroll')
+            html.classList.add('no-scroll');
             const touch = e.touches[0];
             startDragging(touch.clientX, touch.clientY);
         });
         document.addEventListener('touchmove', (e) => {
-            console.log('touch move')
             const touch = e.touches[0];
             dragMap(touch.clientX, touch.clientY);
         });
         document.addEventListener('touchend', () => {
-            stopDragging()
-            $('html').removeClass('no-scroll')
+            html.classList.remove('no-scroll')
+            stopDragging();
         });
-    } else {
-        return
     }
 }
 
-window.addEventListener('resize', () => {
-    resize()
-})
-resize()
-
-
-
+window.addEventListener('resize', resize);
+resize();
 
 // Зум по двойному клику
-document.addEventListener('dblclick', event => {
-    isZoom = !isZoom;
-    map.classList.toggle('full-map');
-});
+if (windowWidth > 768) {
+    document.addEventListener('dblclick', event => {
+        isZoom = !isZoom;
+        map.classList.toggle('full-map');
+    });
+}
 
 // Скролл и скрытие overlay
 window.addEventListener('scroll', function() {
-    var element = document.getElementById('map');
-    var element_top = element.getBoundingClientRect().top + window.scrollY;
-    var element_bottom = element_top + element.offsetHeight;
-    var w_height = window.innerHeight;
+    const element = document.getElementById('map');
+    const element_top = element.getBoundingClientRect().top + window.scrollY;
+    const element_bottom = element_top + element.offsetHeight;
+    const w_height = window.innerHeight;
 
     if ((window.scrollY < element_top - w_height) || (window.scrollY > element_bottom)) {
         overlay.classList.remove('overlay--hidden');
@@ -144,22 +145,15 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
 // Отображение модального окна
 const mapLinks = map.querySelectorAll('path');
-
 mapLinks.forEach(el => {
     el.addEventListener('mouseenter', (e) => {
-        let self = e.currentTarget;
-        console.log(self)
-        self.classList.add('house-hover')
-        let selfStatus = self.getAttribute('data-status');
-        console.log(selfStatus)
-
-    })
+        const self = e.currentTarget;
+        self.classList.add('house-hover');
+    });
     el.addEventListener('mouseout', (e) => {
-        let self = e.currentTarget;
-        self.classList.remove('house-hover')
-
-    })
-})  
+        const self = e.currentTarget;
+        self.classList.remove('house-hover');
+    });
+});
